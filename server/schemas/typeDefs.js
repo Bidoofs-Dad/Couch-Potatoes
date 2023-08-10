@@ -9,7 +9,8 @@ const typeDefs = gql`
   }
 
   type Review {
-   review: String
+    _id: ID
+   reviewText: String
    reviewUser: string
    dateCreated: string
    comments: [comment]!
@@ -25,12 +26,14 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-   user: User
+    user: User
   }
 
   type Query {
-    users: [User]!
-    user(userId: ID!): User
+    users: [User]
+    user(username: String!): User
+    reviews(username: String): [Review]
+    review(reviewId: ID!): Review
   }
 
   type Mutation {
