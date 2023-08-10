@@ -9,8 +9,18 @@ const typeDefs = gql`
   }
 
   type Review {
-   username: String
-   dateCreated: Date
+   review: String
+   reviewUser: string
+   dateCreated: string
+   comments: [comment]!
+
+  }
+
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String 
   }
 
   type Auth {
@@ -19,15 +29,21 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
+    users: [User]!
+    user(userId: ID!): User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
-    removeUser(userId: ID!): User
+    addReview(thoughtReview: String!, reviewAuthor: String!): Thought
+    addComment(
+      thoughtId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Review
+    removeReview(reviewId: ID!): Thought
+    removeComment(commentId: ID!, commentId: ID!): Thought
   }
 `;
 
