@@ -37,6 +37,6 @@ const reveiwSchema = new Schema({
             },
           ],
         });
-const Review = model('Review',reveiwSchema);
+const Review = mongoose.model('Review',reveiwSchema);
 
 module.exports = Review;
