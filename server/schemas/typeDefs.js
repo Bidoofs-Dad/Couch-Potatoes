@@ -11,9 +11,9 @@ const typeDefs = gql`
   type Review {
     _id: ID
    reviewText: String
-   reviewUser: string
-   dateCreated: string
-   comments: [comment]!
+   reviewUser: String
+   dateCreated: String
+   comments: [Comment]!
 
   }
 

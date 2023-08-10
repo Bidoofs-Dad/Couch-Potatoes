@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.get('/api', async (req, res) => {
   const data = await fetchData();
   console.log(data);
-  res.json(data);
+  // res.json(data);
 });
 
 
