@@ -8,20 +8,26 @@ const typeDefs = gql`
     password: String
   }
 
+  type Review {
+   username: String
+   dateCreated: Date
+  }
+
   type Auth {
     token: ID!
-    user: User
+   user: User
   }
 
   type Query {
-    users: [User]!
-    user(userId: ID!): User
-    me: User
+    profiles: [Profile]!
+    profile(profileId: ID!): Profile
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+
+    removeUser(userId: ID!): User
   }
 `;
 
