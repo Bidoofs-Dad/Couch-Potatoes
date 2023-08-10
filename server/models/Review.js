@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 const { Schema } = mongoose;
 
 const reveiwSchema = new Schema({
-    review: {
+    reviewText: {
       type: String,
       required:'You need to leave a review!',
       trim: true,

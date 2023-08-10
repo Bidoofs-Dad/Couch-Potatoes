@@ -9,7 +9,8 @@ const typeDefs = gql`
   }
 
   type Review {
-   review: String
+    _id: ID
+   reviewText: String
    reviewUser: string
    dateCreated: string
    comments: [comment]!
@@ -25,25 +26,27 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-   user: User
+    user: User
   }
 
   type Query {
-    users: [User]!
-    user(userId: ID!): User
+    users: [User]
+    user(username: String!): User
+    reviews(username: String): [Review]
+    review(reviewId: ID!): Review
+    me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addReview(thoughtReview: String!, reviewAuthor: String!): Thought
+    addReview(reviewText: String!): Review
     addComment(
-      thoughtId: ID!
+      reviewId: ID!
       commentText: String!
-      commentAuthor: String!
     ): Review
-    removeReview(reviewId: ID!): Thought
-    removeComment(commentId: ID!, commentId: ID!): Thought
+    removeReview(reviewId: ID!): Review
+    removeComment(reviewId: ID!, commentId: ID!): Review
   }
 `;
 

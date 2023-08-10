@@ -8,8 +8,8 @@ const resolvers = {
       return User.find();
     },
 
-    user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+    user: async (parent, { username }) => {
+      return User.findOne({ username });
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
