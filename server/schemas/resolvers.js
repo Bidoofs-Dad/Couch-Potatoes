@@ -43,8 +43,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addReview: async (parent, { review, reviewUser }) => {
-      const review = await Review.create({ review, reviewUser });
+    addReview: async (parent, { reviewText, reviewUser }) => {
+      const review = await Review.create({ reviewTest, reviewUser });
 
       await User.findOneAndUpdate(
         { username: reviewUser },
