@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Review } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -42,6 +42,39 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+    addReview: async (parent, { review, reviewUser }) => {
+      const review = await Review.create({ review, reviewUser });
+
+      await User.findOneAndUpdate(
+        { username: reviewUser },
+        { $addToSet: { reviews: review._id } }
+      );
+
+      return review;
+    },
+
+    addComment: async (parent, { reviewId, commentText, commentAuthor }) => {
+      return Review.findOneAndUpdate(
+        { _id: reviewId },
+        {
+          $addToSet: { comments: { commentText, commentAuthor } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+    removeReview: async (parent, { reviewId }) => {
+      return Review.findOneAndDelete({ _id: reviewId });
+    },
+    removeComment: async (parent, { reviewId, commentId }) => {
+      return Review.findOneAndUpdate(
+        { _id: reviewId },
+        { $pull: { comments: { _id: commentId } } },
+        { new: true }
+      );
     },
   },
 };
