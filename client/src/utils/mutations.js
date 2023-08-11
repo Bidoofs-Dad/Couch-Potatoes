@@ -24,4 +24,31 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const ADD_REVIEW = gql`
+mutation addReview($reviewText: String!) {
+  addReview(reviewText: $reviewText) {
+    _id
+    reviewText
+    reviewUser
+    dateCreated
+    comments {
+      commentText
+    }
+  }
+}
+;`
 
+export const ADD_COMMENT = gql`
+mutation addComment($reviewId: ID!, $commentText: String!) {
+  addComment(reviewId: $reviewId, commentText: $commentText) {
+    _id
+    reviewText
+    reviewUser
+    dateCreated
+    comments {
+      commentText
+      createdAt
+    }
+  }
+}
+;`
