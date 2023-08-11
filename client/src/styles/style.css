@@ -1,3 +1,20 @@
+:root {
+    --purple: #CDB4DB;
+    --light-pink: #FFC8DD;
+    --pink: #FFAFCC;
+    --light-blue: #BDE0FE;
+    --blue: #A2D2FF;
+    --gray: rgb(236, 236, 236);
+}
+
+body {
+    background-color: rgb(236, 236, 236);
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 @keyframes popUp {
     0% {
         transform: translateY(0px);
@@ -26,6 +43,6 @@
 
 .btn:hover {
 background-color: rgb(91, 9, 163);
-color: azure;
+color: white;
 animation: popUp .3s ease-in;
 }

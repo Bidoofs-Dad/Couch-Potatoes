@@ -12,11 +12,11 @@ const Header = () => {
     };
     return (
         <header>
-            <div className='navBar'>
+            <div className='navbar'>
                 <h1>LOGO IMG HERE</h1>
-                <div className='searchBar'>
-
-                </div>
+                
+                <input className="search-bar" type="text"/>
+                
                 <div className='links'>
                     <h2>Link</h2>
                     <h2>Link</h2>
