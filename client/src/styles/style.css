@@ -14,3 +14,35 @@ body {
     margin: 0;
     padding: 0;
 }
+
+@keyframes popUp {
+    0% {
+        transform: translateY(0px);
+    }
+
+    20% {
+        transform: translateY(2px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+
+    75% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.iconAnim:hover {
+    animation: popUp .3s ease-in;
+}
+
+.btn:hover {
+background-color: rgb(91, 9, 163);
+color: white;
+animation: popUp .3s ease-in;
+}
