@@ -9,3 +9,5 @@ return (
     </main>
     );
 };
+
+export default Home;
