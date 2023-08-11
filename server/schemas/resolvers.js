@@ -11,6 +11,13 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username });
     },
+    reviews: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Review.find(params).sort({ createdAt: -1 });
+    },
+    review: async (parent, { thoughtId }) => {
+      return Review.findOne({ _id: thoughtId });
+    },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
