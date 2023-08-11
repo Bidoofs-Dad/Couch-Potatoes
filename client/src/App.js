@@ -1,18 +1,5 @@
-
 import React from "react";
-import Header from './components/Header/index';
-//import BodyContainer from "./components/bodyContainer";
-import Footer from './components/Footer/index';
-import './styles/style.css';
 
-const App = () => {
-    return(
-        <div>
-            <Header/>
-            {/* <BodyContainer/> */}
-            <Footer/>
-
-import React from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -22,14 +9,14 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Header from './components/Header/index';
+import Footer from './components/Footer/index';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import './styles/style.css';
 
-// Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
