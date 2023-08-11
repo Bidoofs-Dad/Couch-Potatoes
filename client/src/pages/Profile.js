@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
 // import { useParams } from 'react-router-dom';
 // import { useQuery } from '@apollo/client';
 
 // import { QUERY_SINGLE_PROFILE } from '../utils/queries';
 
-const Profile = () => {
+// const Profile = () => {
 //   const { profileId } = useParams();
 
 //   const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
@@ -14,14 +14,14 @@ const Profile = () => {
 
 //   const profile = data?.profile || {};
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-  return (
-    <div>
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+//   return (
+//     <div>
 
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
-export default Profile;
+// export default Profile;

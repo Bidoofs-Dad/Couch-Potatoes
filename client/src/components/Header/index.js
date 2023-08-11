@@ -1,6 +1,6 @@
 import React from 'react';
-import './components/components.css'
-// import { link } from '';
+import '../components.css'
+import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
