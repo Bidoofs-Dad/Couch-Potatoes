@@ -63,7 +63,7 @@ query singleReview($reviewId: ID!) {
     }
   }
 }
-;`
+`;
 
 export const QUERY_REVIEWS = gql`
 query allReviews {
@@ -74,4 +74,4 @@ query allReviews {
     dateCreated
   }
 }
-;`
+`;

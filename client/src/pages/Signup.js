@@ -1,48 +1,48 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-// import { useMutation } from '@apollo/client';
-// import { ADD_PROFILE } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
 const Signup = () => {
-    // const [formState, setFormState] = useState({
-    //   name: '',
-    //   email: '',
-    //   password: '',
-    // });
-    // const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+    const [formState, setFormState] = useState({
+      username: '',
+      email: '',
+      password: '',
+    });
+    const [addUser, { error, data }] = useMutation(ADD_USER);
   
-    // update state based on form input changes
-    // const handleChange = (event) => {
-    //   const { name, value } = event.target;
+    //update state based on form input changes
+    const handleChange = (event) => {
+      const { username, value } = event.target;
   
-    //   setFormState({
-    //     ...formState,
-    //     [name]: value,
-    //   });
-    // };
+      setFormState({
+        ...formState,
+        [username]: value,
+      });
+    };
   
-    // submit form
-    // const handleFormSubmit = async (event) => {
-    //   event.preventDefault();
-    //   console.log(formState);
+    //submit form
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      console.log(formState);
   
-    //   try {
-    //     const { data } = await addProfile({
-    //       variables: { ...formState },
-    //     });
+      try {
+        const { data } = await addUser({
+          variables: { ...formState },
+        });
   
-    //     Auth.login(data.addProfile.token);
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // };
+        Auth.login(data.addUser.token);
+      } catch (e) {
+        console.error(e);
+      }
+    };
   
     return (
       <main className="flex-row justify-center mb-4">
-        {/* <div className="col-12 col-lg-10">
+        <div className="col-12 col-lg-10">
           <div className="card">
             <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
             <div className="card-body">
@@ -58,7 +58,7 @@ const Signup = () => {
                     placeholder="Your username"
                     name="name"
                     type="text"
-                    value={formState.name}
+                    value={formState.username}
                     onChange={handleChange}
                   />
                   <input
@@ -94,7 +94,7 @@ const Signup = () => {
               )}
             </div>
           </div>
-        </div> */}
+        </div>
       </main>
     );
   };
