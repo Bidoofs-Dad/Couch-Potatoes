@@ -1,4 +1,5 @@
 import React from 'react';
+import './components/components.css'
 // import { link } from '';
 
 import Auth from '../../utils/auth';
@@ -21,15 +22,15 @@ const Header = () => {
                 </div>
                 <div>
                     {Auth.loggedIn() ? (
-                        <button className="" onClick={logout}>
+                        <button className="logout" onClick={logout}>
                             Logout
                         </button>
                     ) : (
                     <>
-                    <Link className="" to="/login">
+                    <Link className="login" to="/login">
                         Login
                     </Link>
-                    <Link className="" to="/signup">
+                    <Link className="signup" to="/signup">
                         Signup
                     </Link>
                 </>
