@@ -36,7 +36,7 @@ mutation addReview($reviewText: String!) {
     }
   }
 }
-;`
+`;
 
 export const ADD_COMMENT = gql`
 mutation addComment($reviewId: ID!, $commentText: String!) {
@@ -51,4 +51,4 @@ mutation addComment($reviewId: ID!, $commentText: String!) {
     }
   }
 }
-;`
+`;
