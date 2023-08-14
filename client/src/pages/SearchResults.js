@@ -9,9 +9,8 @@ function SearchResults() {
     async function fetchGames() {
       try {
         if (searchInput) {
-          const response = await searchGames(searchInput); // Pass searchInput as a parameter
+          const response = await searchGames(searchInput);
           const gameData = await response.json();
-          console.log(gameData);
           setGames(gameData.results);
         }
       } catch (error) {
@@ -20,7 +19,7 @@ function SearchResults() {
     }
 
     fetchGames();
-  }, [searchInput]); // Add searchInput to the dependency array
+  }, [searchInput]);
 
   return (
     <div>
