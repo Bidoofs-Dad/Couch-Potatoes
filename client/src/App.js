@@ -18,6 +18,12 @@ import Signup from './pages/Signup';
 import Game from './pages/Game';
 import './styles/style.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee, faCog } from '@fortawesome/free-solid-svg-icons'
+
+// Add the imported icons to the library
+library.add(faCoffee, faCog);
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -45,7 +51,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="">
           <Header />
           <div className="container">
             <Routes>
