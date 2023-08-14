@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import Game from './pages/Game';
 import './styles/style.css';
 
 const httpLink = createHttpLink({
@@ -63,6 +64,10 @@ function App() {
               <Route 
                 path="/profiles/:profileId" 
                 element={<Profile />} 
+              />
+              <Route 
+                path="/game/" 
+                element={<Game />} 
               />
             </Routes>
           </div>
