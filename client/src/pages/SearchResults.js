@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import {searchGames} from '../utils/API'; // Update the path accordingly
+import { searchGames } from '../utils/API'; // Update the path accordingly
 
 function SearchResults() {
   const [games, setGames] = useState([]);
+  const searchInput = localStorage.getItem('searchInput');
 
   useEffect(() => {
     async function fetchGames() {
       try {
-        const response = await searchGames();
-        const gameData = await response.json();
-        console.log(gameData);
-        setGames(gameData.results);
-          
+        if (searchInput) {
+          const response = await searchGames(searchInput); // Pass searchInput as a parameter
+          const gameData = await response.json();
+          console.log(gameData);
+          setGames(gameData.results);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     }
-  
+
     fetchGames();
-  }, []);
+  }, [searchInput]); // Add searchInput to the dependency array
 
   return (
     <div>
