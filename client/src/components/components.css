@@ -1,0 +1,83 @@
+/* BASE */
+:root {
+    --purple: #CDB4DB;
+    --light-pink: #FFC8DD;
+    --pink: #FFAFCC;
+    --light-blue: #BDE0FE;
+    --blue: #A2D2FF;
+    --gray: rgb(236, 236, 236);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+/* HEADER */
+header {
+    background-color: var(--blue);
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center the items */
+    padding: 10px 20px;
+    color: black;
+    margin: 0;
+    /* width: 100%; */
+}
+  
+.navbar h1 {
+    margin: 0; /* Remove margin from heading for consistent alignment */
+}
+
+.search-bar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 25%;
+    box-sizing: border-box;
+}
+  
+.links {
+    display: flex; /* Display links in a row */
+    gap: 20px; /* Adjust the gap between links */
+}
+  
+.links h2 {
+    margin: 0; /* Remove margin from heading for consistent alignment */
+    cursor: pointer;
+}
+
+.links h2:hover {
+    color: #ddd;
+}
+  
+.logout,
+.login,
+.signup {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+  
+.logout:hover,
+.login:hover,
+.signup:hover {
+    color: #ddd;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--blue);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    padding: 1px 0;
+    text-align: center;
+}
+
+  

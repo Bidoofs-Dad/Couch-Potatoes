@@ -1,22 +1,36 @@
-import React from 'react';
-
-import '../components.css'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import '../components.css'
 import Auth from '../../utils/auth';
 
 const Header = () => {
+    const [searchInput, setSearchInput] = useState('');
+
     const logout = (event) => {
-        event.preventDefault ();
+        event.preventDefault();
         Auth.logout();
     };
+
     return (
         <header>
-            <div className='navBar'>
+            <div className='navbar'>
                 <h1>LOGO IMG HERE</h1>
-                <div className='searchBar'>
+                
+                <input
+                    className="search-bar"
+                    type="text"
+                    value={searchInput}
+                    onChange={(e) => setSearchInput(e.target.value)}
+                />
 
-                </div>
+                <Link
+                    to={`/search-results?search=${searchInput}`}
+                    className="custom-button"
+                    onClick={() => localStorage.setItem('searchInput', searchInput)}
+                >
+                    Search!
+                </Link>
+                
                 <div className='links'>
                     <h2>Link</h2>
                     <h2>Link</h2>
@@ -27,15 +41,15 @@ const Header = () => {
                             Logout
                         </button>
                     ) : (
-                    <>
-                    <Link className="login" to="/login">
-                        Login
-                    </Link>
-                    <Link className="signup" to="/signup">
-                        Signup
-                    </Link>
-                </>
-                )}
+                        <>
+                            <Link className="login" to="/login">
+                                Login
+                            </Link>
+                            <Link className="signup" to="/signup">
+                                Signup
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </header>
