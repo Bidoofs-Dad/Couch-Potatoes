@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../components.css'
 import cLogo from '../assets/potatoIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faClosedCaptioning, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,7 +22,7 @@ const Header = () => {
     return (
             <header>
                 <div className='navbar'>
-                    <img src='cLogo' alt='Couch Potatoes logo'></img>
+                    <img src={cLogo} alt='Couch Potatoes logo'></img>
                     
                     <form>
                     <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
