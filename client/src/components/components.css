@@ -71,6 +71,10 @@ header {
 .searchIcon:hover {
     color: var(--purple2);
 }
+
+.user-fav {
+  text-decoration: none;
+}
   
 .links {
     display: flex;
