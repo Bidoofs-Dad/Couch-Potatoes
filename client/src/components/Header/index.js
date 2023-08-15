@@ -22,13 +22,15 @@ const Header = () => {
     return (
         <header>
             <div className='navbar'>
-                <img src='cLogo' alt='Couch Potatoes logo'></img>
+                <img src={cLogo} className='logo' alt='Couch Potatoes logo'></img>
+
+                <h1>COUCH POTATOES</h1>
                 
                 <form>
                 <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-<Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => localStorage.setItem('searchInput', searchInput)} >
-                <FontAwesomeIcon icon={faSearch} className='searchIcon' />
-                </Link>
+                    <Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => localStorage.setItem('searchInput', searchInput)} >
+                    <FontAwesomeIcon icon={faSearch} className='searchIcon' />
+                    </Link>
                 </form>
 
                 <div className="links">

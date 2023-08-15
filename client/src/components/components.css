@@ -46,6 +46,11 @@ header {
   
 .navbar h1 {
     margin: 0;
+    color: white;
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .search-bar {
@@ -122,7 +127,6 @@ header {
 /* FOOTER */
 footer {
     background-color: var(--electric-blue);
-    position: fixed;
     bottom: 0;
     width: 100%;
     color: black;
@@ -130,4 +134,21 @@ footer {
     text-align: center;
 }
 
+.bcLogo {
+  color: white;
+}
+
+.socialIcons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.socialIcons a {
+  color: white;
+  margin-left: 10px;
+  font-size: 24px;
+  text-decoration: none;
+}
   

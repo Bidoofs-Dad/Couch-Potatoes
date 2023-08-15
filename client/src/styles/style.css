@@ -1,18 +1,77 @@
 :root {
-    --purple: #CDB4DB;
-    --light-pink: #FFC8DD;
-    --pink: #FFAFCC;
-    --light-blue: #BDE0FE;
-    --blue: #A2D2FF;
+    --light-pink: #FFCBF2;
+    --pink: #F3C4FB;
+    --purple-pink: #ECBCFD;
+    --light-purple: #E5B3FE;
+    --purple2: #E2AFFF;
+    --purple: #DEAAFF;
+    --lavender: #D8BBFF;
+    --light-purple: #D0D1FF;
+    --electric-blue: #42cdfc;
+    --blue: #C0FDFF;
     --gray: #F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
-body {
-    background-color: rgb(236, 236, 236);
-    position: relative;
-    min-height: 100vh;
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    background-color: var(--gray);
+}
+
+.content-container {
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.large-box {
+    background-color: lightblue;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.small-box {
+    background-color: white;
+    margin: 5px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        padding: 0 10px;
+    }
 }
 
 @keyframes popUp {
