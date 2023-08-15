@@ -1,13 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { individualGame } from '../utils/API';
 
 const Game = () => {
     const { gameId } = useParams();
     const [gameDetails, setGameDetails] = useState(null);
 
+    useEffect(() => {
+        async function fetchGameDetails() {
+            try {
+                const response = await individualGame(gameId);
+                const gameDetailsData = await response.json();
+                console.log(gameDetailsData);
+                setGameDetails(gameDetailsData);
+            } catch (error) {
+                console.error('Error fetching game details:', error);
+            }
+        }
+
+        fetchGameDetails();
+    }, [gameId]);
+
+    if (!gameDetails) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <main>
-            <div className="game-con">
+
+            <div>
+                <h1>{gameDetails.name}</h1>
+                <p>{gameDetails.description_raw}</p>
+                {/* Other details to display */}
+            </div>
+            {/* <div className="game-con">
                 <div className="game-pic">
                     <div className="game-name"></div>
                 </div>
@@ -32,7 +58,7 @@ const Game = () => {
                         Submit
                     </button>
                 </form>
-            </div>
+            </div> */}
 
         </main>
     );
