@@ -28,7 +28,7 @@ const Profile = () => {
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to
-        <Link to="/signup">sign</Link> up or log in!
+        sign up or log in!
       </h4>
     );
   }

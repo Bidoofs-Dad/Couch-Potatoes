@@ -22,18 +22,18 @@ const Header = () => {
     return (
 
         <header>
-            
+
             <div className='navbar'>
                 <Link className='noDecor' to='/'>
                     <img src={cLogo} className='logo icon-container' alt='Couch Potatoes logo'></img>
                     <h1 className='pageName'>COUCH POTATOES</h1>
                 </Link>
-          
-                
+
+
                 <form>
-                <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+                    <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
                     <Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => localStorage.setItem('searchInput', searchInput)} >
-                    <FontAwesomeIcon icon={faSearch} className='searchIcon' />
+                        <FontAwesomeIcon icon={faSearch} className='searchIcon' />
                     </Link>
                 </form>
 
@@ -50,17 +50,30 @@ const Header = () => {
                             <FontAwesomeIcon icon={faStar} className="favLink" />
                             <span className="icon-caption">FAVORITE</span>
                         </div>
-                        
+
                     </Link>
 
-                    <Link to='/Login'>
+                    {/* <Link to='/Login'>
                         <div className='btn'>
                             <span id="loginLogoutButtonContainer">
                                 <button id="loginButton" className="LogOn-button">Login</button>
-                                <button id="logoutButton" className="LogOn-button" style={{ display: 'none' }}>Logout</button>
+                                <button id="logoutButton" className="LogOn-button">Logout</button>
                             </span>
                         </div>
-                    </Link>
+                    </Link> */}
+                    {Auth.loggedIn() ? (
+                        <button id="logoutButton" className="LogOn-button" onClick={logout}>
+                            Logout
+                        </button>
+                    ) : (
+                        <div className='btn'>
+                            <span id="loginLogoutButtonContainer">
+                                <Link to='login'><button id="loginButton" className="LogOn-button">Login</button></Link>
+                                {' '}
+                                <Link to='/signup'><button id="signupButton" className="LogOn-button">Sign Up</button></Link>
+                            </span>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>
