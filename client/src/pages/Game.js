@@ -36,8 +36,6 @@ const Game = () => {
 
                 </div>
 
-                <div className="game-name">{gameDetails.name}</div>
-
                 <div className='game-Description'>
                     <p>{gameDetails.description_raw}</p>
                 </div>
