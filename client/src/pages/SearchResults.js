@@ -26,13 +26,14 @@ function SearchResults() {
   return (
     <div>
       <h1>Game List</h1>
-      <ul>
+      <div>
         {games.map(game => (
-          <li key={game.id}>
+          <div key={game.id}>
+            <img src={game.background_image} alt='the game' style={{ width: 350 }}/><br></br>
             <Link to={`/game/${game.id}`}>{game.name}</Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

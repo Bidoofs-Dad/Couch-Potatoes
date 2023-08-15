@@ -62,7 +62,7 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Got something to say?</h3>
 
       {Auth.loggedIn() ? (
         <>
