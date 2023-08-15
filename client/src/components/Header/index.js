@@ -22,9 +22,11 @@ const Header = () => {
     return (
 
         <header>
+            
             <div className='navbar'>
-                <img src={cLogo} className='logo' alt='Couch Potatoes logo'></img>
-
+                <Link to='/'>
+                    <img src={cLogo} className='logo icon-container' alt='Couch Potatoes logo'></img>
+            </Link>
                 <h1>COUCH POTATOES</h1>
                 
                 <form>
@@ -51,7 +53,7 @@ const Header = () => {
                     </Link>
 
                     <Link to='/Login'>
-                        <div>
+                        <div className='btn'>
                             <span id="loginLogoutButtonContainer">
                                 <button id="loginButton" className="LogOn-button">Login</button>
                                 <button id="logoutButton" className="LogOn-button" style={{ display: 'none' }}>Logout</button>
