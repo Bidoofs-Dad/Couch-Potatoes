@@ -13,6 +13,8 @@ const typeDefs = gql`
     _id: ID
    reviewText: String
    reviewUser: String
+   gameId: String
+   gameName: String
    dateCreated: String
    comments: [Comment]!
 
@@ -41,7 +43,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addReview(reviewText: String!): Review
+    addReview(reviewText: String!, gameId: String!, gameName: String!): Review
     addComment(
       reviewId: ID!
       commentText: String!

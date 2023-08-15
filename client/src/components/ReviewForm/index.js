@@ -7,7 +7,7 @@ import { QUERY_REVIEWS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-const ReviewForm = () => {
+const ReviewForm = ({ gameId, gameName }) => {
   const [reviewText, setReviewText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
@@ -38,10 +38,16 @@ const ReviewForm = () => {
     event.preventDefault();
 
     try {
+      console.log('Review Text:', reviewText);
+      console.log('Game ID:', gameId);
+      console.log('Game Name:', gameName);
+
       const { data } = await addReview({
         variables: {
           reviewText,
           reviewUser: Auth.getProfile().data.username,
+          gameId,
+          gameName,
         },
       });
 
@@ -67,9 +73,8 @@ const ReviewForm = () => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
           </p>
@@ -91,11 +96,11 @@ const ReviewForm = () => {
                 Add Review
               </button>
             </div>
-            {/* {error && (
+            {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}
               </div>
-            )} */}
+            )}
           </form>
         </>
       ) : (

@@ -10,6 +10,8 @@ export const QUERY_USERS = gql`
       _id
       reviewText
       reviewUser
+      gameId
+      gameName
       dateCreated
     }
   }
@@ -26,6 +28,8 @@ export const QUERY_SINGLE_USER = gql`
       _id
       reviewText
       reviewUser
+      gameId
+      gameName
       dateCreated
     }
   }
@@ -42,6 +46,8 @@ export const QUERY_ME = gql`
       _id
       reviewText
       reviewUser
+      gameId
+      gameName
       dateCreated
     }
   }
@@ -54,6 +60,8 @@ query singleReview($reviewId: ID!) {
     _id
     reviewText
     reviewUser
+    gameId
+    gameName
     dateCreated
     comments {
       _id
@@ -71,6 +79,8 @@ query allReviews {
     _id
     reviewText
     reviewUser
+    gameId
+    gameName
     dateCreated
   }
 }
