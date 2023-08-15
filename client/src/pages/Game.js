@@ -25,7 +25,7 @@ const Game = () => {
     if (!gameDetails) {
         return <div>Loading...</div>;
     }
-
+    
     return (
         <main>
             <div className="game-con">
@@ -46,7 +46,7 @@ const Game = () => {
 
             <div className='review-con'>
                 <div style={{ border: '1px dotted #1a1a1a' }}>
-                    <ReviewForm />
+                <ReviewForm gameId={gameId} gameName={gameDetails.name} />
                 </div>
             </div>
 
