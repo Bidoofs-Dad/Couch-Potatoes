@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Game from './pages/Game';
 import './styles/style.css';
+import SearchResults from "./pages/SearchResults";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faCog } from '@fortawesome/free-solid-svg-icons'
@@ -74,6 +75,10 @@ function App() {
               <Route 
                 path="/game/" 
                 element={<Game />} 
+              />
+              <Route 
+                path="/search-results" 
+                element={<SearchResults />} 
               />
             </Routes>
           </div>

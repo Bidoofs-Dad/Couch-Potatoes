@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../components.css'
 import cLogo from '../assets/potatoIcon.png'
@@ -8,22 +8,27 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom';
-
+import '../components.css'
 import Auth from '../../utils/auth';
 
 const Header = () => {
+    const [searchInput, setSearchInput] = useState('');
+
     const logout = (event) => {
-        event.preventDefault ();
+        event.preventDefault();
         Auth.logout();
     };
+
     return (
         <header>
             <div className='navbar'>
                 <img src='cLogo' alt='Couch Potatoes logo'></img>
                 
                 <form>
-                <input className="search-bar" type="text"/>
+                <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+<Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => localStorage.setItem('searchInput', searchInput)} >
                 <FontAwesomeIcon icon={faSearch} className='searchIcon' />
+                </Link>
                 </form>
 
                 <div className="links">
@@ -42,6 +47,7 @@ const Header = () => {
                         <button id="loginButton" className="LogOn-button">Login</button>
                         <button id="logoutButton" className="LogOn-button" style={{ display: 'none' }}>Logout</button>
                     </span>
+
                 </div>
             </div>
         </header>
