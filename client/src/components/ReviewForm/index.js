@@ -79,8 +79,8 @@ const ReviewForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
+                name="reviewText"
+                placeholder="Whatcha think about this game??"
                 value={reviewText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -93,16 +93,16 @@ const ReviewForm = () => {
                 Add Review
               </button>
             </div>
-            {error && (
+            {/* {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}
               </div>
-            )}
+            )} */}
           </form>
         </>
       ) : (
         <p>
-          You need to be logged in to write a review!. Please{' '}
+          You need to be logged in to write a review! Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
