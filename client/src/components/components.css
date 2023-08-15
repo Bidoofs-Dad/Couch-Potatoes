@@ -1,17 +1,35 @@
 /* BASE */
 :root {
-    --purple: #CDB4DB;
-    --light-pink: #FFC8DD;
-    --pink: #FFAFCC;
-    --light-blue: #BDE0FE;
-    --blue: #A2D2FF;
-    --gray: rgb(236, 236, 236);
+    --light-pink: #FFCBF2;
+    --pink: #F3C4FB;
+    --purple-pink: #ECBCFD;
+    --light-purple: #E5B3FE;
+    --purple2: #E2AFFF;
+    --purple: #DEAAFF;
+    --lavender: #D8BBFF;
+    --light-purple: #D0D1FF;
+    --electric-blue: #42cdfc;
+    --blue: #C0FDFF;
+    --gray: #F5F5F5;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-2px);
+      }
+      75% {
+        transform: translateY(2px);
+      }
+}
+
 /* HEADER */
 header {
-    background-color: var(--blue);
+    background-color: var(--electric-blue);
     padding: 10px 0;
     margin: 0;
     width: 100%;
@@ -20,15 +38,14 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically center the items */
+    align-items: center;
     padding: 10px 20px;
     color: black;
     margin: 0;
-    /* width: 100%; */
 }
   
 .navbar h1 {
-    margin: 0; /* Remove margin from heading for consistent alignment */
+    margin: 0;
 }
 
 .search-bar {
@@ -36,23 +53,56 @@ header {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    width: 25%;
     box-sizing: border-box;
+}
+
+.searchIcon {
+    cursor: pointer;
+    padding-left: 20px;
+    color: var(--pink);
+    font-size: 40px;
+}
+
+.searchIcon:hover {
+    color: var(--purple2);
 }
   
 .links {
-    display: flex; /* Display links in a row */
-    gap: 20px; /* Adjust the gap between links */
-}
+    display: flex;
+    align-items: center;
+  }
   
-.links h2 {
-    margin: 0; /* Remove margin from heading for consistent alignment */
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Adjust padding as needed */
+  }
+  
+  .userLink,
+  .favLink {
     cursor: pointer;
-}
+    color: var(--pink);
+    font-size: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .userLink:hover,
+  .favLink:hover {
+    color: var(--purple2);
+  }
 
-.links h2:hover {
-    color: #ddd;
-}
+  .icon-container:hover {
+        animation: wiggle 0.5s infinite;
+  }
+  
+  .icon-caption {
+    margin-top: 5px; /* Adjust margin as needed */
+    font-size: 14px; /* Adjust font size as needed */
+    color: white;
+    cursor: pointer;
+  }
+  
   
 .logout,
 .login,
@@ -71,7 +121,7 @@ header {
 
 /* FOOTER */
 footer {
-    background-color: var(--blue);
+    background-color: var(--electric-blue);
     position: fixed;
     bottom: 0;
     width: 100%;
