@@ -73,7 +73,11 @@ function App() {
                 element={<Profile />} 
               />
               <Route 
-                path="/game/" 
+                path="/profile" 
+                element={<Profile />}
+              />
+              <Route 
+                path="/game/:gameId" 
                 element={<Game />} 
               />
               <Route 
