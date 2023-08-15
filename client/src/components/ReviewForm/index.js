@@ -52,6 +52,7 @@ const ReviewForm = ({ gameId, gameName }) => {
       });
 
       setReviewText('');
+      alert('Review Submitted!')
     } catch (err) {
       console.error(err);
     }
