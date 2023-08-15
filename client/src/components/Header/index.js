@@ -22,10 +22,13 @@ const Header = () => {
     return (
 
         <header>
+            
             <div className='navbar'>
-                <img src={cLogo} className='logo' alt='Couch Potatoes logo'></img>
-
-                <h1>COUCH POTATOES</h1>
+                <Link className='noDecor' to='/'>
+                    <img src={cLogo} className='logo icon-container' alt='Couch Potatoes logo'></img>
+                    <h1 className='pageName'>COUCH POTATOES</h1>
+                </Link>
+          
                 
                 <form>
                 <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
@@ -51,16 +54,16 @@ const Header = () => {
                     </Link>
 
                     <Link to='/Login'>
-                        <div>
+                        <div className='btn'>
                             <span id="loginLogoutButtonContainer">
                                 <button id="loginButton" className="LogOn-button">Login</button>
                                 <button id="logoutButton" className="LogOn-button" style={{ display: 'none' }}>Logout</button>
                             </span>
                         </div>
                     </Link>
-                    </div>
                 </div>
-            </header>
+            </div>
+        </header>
     );
 };
 

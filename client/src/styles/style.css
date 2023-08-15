@@ -76,32 +76,56 @@ body, html {
 
 @keyframes popUp {
     0% {
-        transform: translateY(0px);
+        transform: translateX(0px);
     }
 
     20% {
-        transform: translateY(2px);
+        transform: translateX(2px);
     }
 
     50% {
-        transform: translateY(4px);
+        transform: translateX(10px);
     }
 
     75% {
-        transform: translateY(2px);
+        transform: translateX(2px);
     }
 
     100% {
-        transform: translateY(0px);
+        transform: translateX(0px);
     }
 }
 
 .iconAnim:hover {
-    animation: popUp .3s ease-in;
+    animation: popUp 1s ease-in;
 }
 
-.btn:hover {
+.btn:active {
 background-color: rgb(91, 9, 163);
 color: white;
 animation: popUp .3s ease-in;
 }
+
+.game-pic {
+    width: 50%; 
+}
+
+.pic-con{
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 1050px) {
+    main {
+      width: 70%;
+    }
+  }
+
+
+  @media (max-width: 675px) {
+    .game-Description  {
+      font-size: 10px;
+    }
+  }
+  
+  

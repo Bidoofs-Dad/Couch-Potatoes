@@ -29,10 +29,14 @@ const Game = () => {
     return (
         <main>
             <div className="game-con">
+
                 <div className="game-pic">
                     <img src={gameDetails.background_image} alt="The Game!" />
                     <div className="game-name">{gameDetails.name}</div>
+
                 </div>
+
+                <div className="game-name">{gameDetails.name}</div>
 
                 <div className='game-Description'>
                     <p>{gameDetails.description_raw}</p>
