@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const { Schema } = mongoose;
 
-const reveiwSchema = new Schema({
+const reviewSchema = new Schema({
     reviewText: {
       type: String,
       required:'You need to leave a review!',
@@ -41,6 +41,6 @@ const reveiwSchema = new Schema({
             },
           ],
         });
-const Review = mongoose.model('Review',reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
