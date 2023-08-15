@@ -50,9 +50,9 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addReview: async (parent, { reviewText }, context) => {
+    addReview: async (parent, { reviewText, gameId, gameName }, context) => {
       if (context.user) {
-      const review = await Review.create({ reviewText, reviewUser: context.user.username });
+      const review = await Review.create({ reviewText, reviewUser: context.user.username, gameId, gameName });
 
       await User.findOneAndUpdate(
         { _id: context.user._id },
