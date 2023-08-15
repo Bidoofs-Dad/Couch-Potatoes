@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { searchGames } from '../utils/API'; // Update the path accordingly
+import { searchGames } from '../utils/API';
 
 function SearchResults() {
   const [games, setGames] = useState([]);
