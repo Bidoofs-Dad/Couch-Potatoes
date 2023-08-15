@@ -151,4 +151,33 @@ footer {
   font-size: 24px;
   text-decoration: none;
 }
-  
+
+@media (max-width: 900px) {
+  .favLink, .logo, .userLink, .searchIcon  {
+    width: 50px;
+  }
+}
+
+@media (max-width: 675px) {
+  .favLink, .logo, .userLink, .searchIcon  {
+    width: 25%;
+  }
+}
+
+@media (max-width: 675px) {
+  .pageName  {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 675px) {
+  form,.search-bar  {
+    width: 100px;
+  }
+}
+
+.noDecor {
+  text-decoration: none;
+}
+
+

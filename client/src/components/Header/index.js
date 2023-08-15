@@ -24,10 +24,11 @@ const Header = () => {
         <header>
             
             <div className='navbar'>
-                <Link to='/'>
+                <Link className='noDecor' to='/'>
                     <img src={cLogo} className='logo icon-container' alt='Couch Potatoes logo'></img>
-            </Link>
-                <h1>COUCH POTATOES</h1>
+                    <h1 className='pageName'>COUCH POTATOES</h1>
+                </Link>
+          
                 
                 <form>
                 <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
@@ -60,9 +61,9 @@ const Header = () => {
                             </span>
                         </div>
                     </Link>
-                    </div>
                 </div>
-            </header>
+            </div>
+        </header>
     );
 };
 
