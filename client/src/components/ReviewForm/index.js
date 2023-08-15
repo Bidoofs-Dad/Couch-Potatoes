@@ -15,7 +15,7 @@ const ReviewForm = ({ gameId, gameName }) => {
   const [addReview, { error }] = useMutation(ADD_REVIEW, {
     update(cache, { data: { addReview } }) {
       try {
-        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
+        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS }) || { reviews: [] };
 
         cache.writeQuery({
           query: QUERY_REVIEWS,
@@ -26,7 +26,7 @@ const ReviewForm = ({ gameId, gameName }) => {
       }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
+      const { me } = cache.readQuery({ query: QUERY_ME }) || { me: { reviews: [] } };
       cache.writeQuery({
         query: QUERY_ME,
         data: { me: { ...me, reviews: [...me.reviews, addReview] } },
