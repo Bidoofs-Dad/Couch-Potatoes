@@ -25,11 +25,13 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation addReview($reviewText: String!) {
-  addReview(reviewText: $reviewText) {
+mutation addReview($reviewText: String!, $gameId: String!, $gameName: String!) {
+  addReview(reviewText: $reviewText, gameId: $gameId, gameName: $gameName) {
     _id
     reviewText
     reviewUser
+    gameId
+    gameName
     dateCreated
     comments {
       commentText
@@ -44,6 +46,8 @@ mutation addComment($reviewId: ID!, $commentText: String!) {
     _id
     reviewText
     reviewUser
+    gameId
+    gameName
     dateCreated
     comments {
       commentText
