@@ -30,6 +30,8 @@ mutation addReview($reviewText: String!) {
     _id
     reviewText
     reviewUser
+    gameId
+    gameName
     dateCreated
     comments {
       commentText
@@ -44,6 +46,8 @@ mutation addComment($reviewId: ID!, $commentText: String!) {
     _id
     reviewText
     reviewUser
+    gameId
+    gameName
     dateCreated
     comments {
       commentText

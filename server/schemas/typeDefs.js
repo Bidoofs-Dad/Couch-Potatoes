@@ -13,6 +13,8 @@ const typeDefs = gql`
     _id: ID
    reviewText: String
    reviewUser: String
+   gameId: String
+   gameName: String
    dateCreated: String
    comments: [Comment]!
 

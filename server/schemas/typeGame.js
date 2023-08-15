@@ -23,7 +23,7 @@ type Auth {
     user: User
 }
 
-type: Query {
+type Query {
     me: User
 }
 
