@@ -114,3 +114,18 @@ animation: popUp .3s ease-in;
   text-align: center;
   padding: 10px;
 }
+
+@media (max-width: 1050px) {
+    main {
+      width: 70%;
+    }
+  }
+
+
+  @media (max-width: 675px) {
+    .game-Description  {
+      font-size: 10px;
+    }
+  }
+  
+  
