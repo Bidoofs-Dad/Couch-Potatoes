@@ -18,6 +18,7 @@ import Signup from './pages/Signup';
 import Game from './pages/Game';
 import './styles/style.css';
 import SearchResults from "./pages/SearchResults";
+import Secret from "./pages/Secret";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faCog } from '@fortawesome/free-solid-svg-icons'
@@ -83,6 +84,10 @@ function App() {
               <Route 
                 path="/search-results" 
                 element={<SearchResults />} 
+              />
+              <Route 
+                path="/secret" 
+                element={<Secret />} 
               />
             </Routes>
           </div>
