@@ -28,18 +28,23 @@ const Game = () => {
     return (
         <main>
 
-            <div>
+            {/* <div>
                 <h1>{gameDetails.name}</h1>
                 <p>{gameDetails.description_raw}</p>
-                {/* Other details to display */}
-            </div>
-            {/* <div className="game-con">
+    
+            </div> */}
+            <div className="game-con">
                 <div className="game-pic">
-                    <div className="game-name"></div>
+                    <img src={gameDetails.background_image} alt="The Game!"/>
+                    <div className="game-name">{gameDetails.name}</div>
                 </div>
 
-                <div className='game-rating1'></div>
-                <div className='game-rating2'></div>
+                <div className='game-Description'>
+                <p>{gameDetails.description_raw}</p>
+                </div>
+
+                <div className='game-rating1'>Metacritic: {gameDetails.metacritic}/100</div>
+                <div className='game-rating2'>User Rating: {gameDetails.rating}/5</div>
             </div>
 
             <div className='review-con'>
@@ -58,7 +63,7 @@ const Game = () => {
                         Submit
                     </button>
                 </form>
-            </div> */}
+            </div>
 
         </main>
     );
