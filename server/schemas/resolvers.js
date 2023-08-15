@@ -15,8 +15,8 @@ const resolvers = {
       const params = username ? { username } : {};
       return Review.find(params).sort({ createdAt: -1 });
     },
-    review: async (parent, { thoughtId }) => {
-      return Review.findOne({ _id: thoughtId });
+    review: async (parent, { reviewId }) => {
+      return Review.findOne({ _id: reviewId });
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
@@ -50,15 +50,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addReview: async (parent, { reviewText, reviewUser }) => {
-      const review = await Review.create({ reviewTest, reviewUser });
+    addReview: async (parent, { reviewText }, context) => {
+      if (context.user) {
+      const review = await Review.create({ reviewText, reviewUser: context.user.username });
 
       await User.findOneAndUpdate(
-        { username: reviewUser },
+        { _id: context.user._id },
         { $addToSet: { reviews: review._id } }
       );
 
       return review;
+      };
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     addComment: async (parent, { reviewId, commentText, commentAuthor }) => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { individualGame } from '../utils/API';
+import ReviewForm from '../components/ReviewForm';
 
 const Game = () => {
     const { gameId } = useParams();
@@ -27,21 +28,18 @@ const Game = () => {
 
     return (
         <main>
-
-            {/* <div>
-                <h1>{gameDetails.name}</h1>
-                <p>{gameDetails.description_raw}</p>
-    
-            </div> */}
             <div className="game-con">
-                <div className='pic-con'>
-                    <img className="game-pic" src={gameDetails.background_image} alt="The Game!"/>
+
+                <div className="game-pic">
+                    <img src={gameDetails.background_image} alt="The Game!" />
+                    <div className="game-name">{gameDetails.name}</div>
+
                 </div>
 
                 <div className="game-name">{gameDetails.name}</div>
 
                 <div className='game-Description'>
-                <p>{gameDetails.description_raw}</p>
+                    <p>{gameDetails.description_raw}</p>
                 </div>
 
                 <div className='game-rating1'>Metacritic: {gameDetails.metacritic}/100</div>
@@ -49,21 +47,9 @@ const Game = () => {
             </div>
 
             <div className='review-con'>
-                <form>
-                    <input
-                        className="review-input"
-                        placeholder="Your Review"
-                        name="review"
-                        type="review"
-                    />
-                    <button
-                        className="btn btn-block btn-primary"
-                        style={{ cursor: 'pointer' }}
-                        type="submit"
-                    >
-                        Submit
-                    </button>
-                </form>
+                <div style={{ border: '1px dotted #1a1a1a' }}>
+                    <ReviewForm />
+                </div>
             </div>
 
         </main>

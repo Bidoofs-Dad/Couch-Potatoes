@@ -38,14 +38,14 @@ const Header = () => {
                 </form>
 
                 <div className="links">
-                    <Link to='/Profile'>
+                    <Link to='/Profile' className='user-fav'>
                         <div className="icon-container">
                             <FontAwesomeIcon icon={faUser} className="userLink" />
                             <span className="icon-caption">USER</span>
                         </div>
                     </Link>
 
-                    <Link to='/Favorite'>
+                    <Link to='/Favorite' className='user-fav'>
                         <div className="icon-container">
                             <FontAwesomeIcon icon={faStar} className="favLink" />
                             <span className="icon-caption">FAVORITE</span>
