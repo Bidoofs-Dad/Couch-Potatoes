@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import '../styles/style.css'
 
 import Auth from '../utils/auth';
 
@@ -40,46 +41,51 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+    <main className="page-container">
+  <div className="content-container">
+    <div className="login-box">
+      <h4 className="">LOGIN</h4>
+      <div className="form-column">
+        <form onSubmit={handleFormSubmit}>
+          <div className="input-container">
+            <label className="form-label" htmlFor="email">Email:</label>
+            <input
+              className="form-input"
+              placeholder="Your Email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
           </div>
-        </div>
+          <div className="input-container">
+            <label className="form-label" htmlFor="password">Password:</label>
+            <input
+              className="form-input"
+              placeholder="Your Password"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </div>
+          <button
+            className="submitbttn"
+            style={{ cursor: 'pointer' }}
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+        {error && (
+          <div className="errorMsg">
+            {error.message}
+          </div>
+        )}
       </div>
-    </main>
+    </div>
+  </div>
+</main>
   );
 };
 

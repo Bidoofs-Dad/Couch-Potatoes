@@ -44,8 +44,10 @@ header {
 }
   
 .navbar h1 {
+  font-size: 12px;
   margin: 0;
   color: white;
+  text-shadow: 2px 2px var(--purple);
 }
 
 .logo {
@@ -79,7 +81,7 @@ header {
   display: flex;
   align-items: center;
 }
-  
+
 .icon-container {
   display: flex;
   flex-direction: column;
@@ -109,6 +111,7 @@ header {
   font-size: 14px; /* Adjust font size as needed */
   color: white;
   cursor: pointer;
+  text-shadow: 2px 2px var(--purple);
 }
   
   
