@@ -54,7 +54,7 @@ const Game = () => {
             <div>Review</div>
           ) : (
             <ReviewList
-              reviewss={reviews}
+              reviews={reviews}
               title="Please leave a review"
             />
           )}
