@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import '../styles/style.css'
 
 import Auth from '../utils/auth';
 
@@ -41,51 +42,61 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main className="page-container">
+      <div className="content-container">
+        <div className="login-box">
+          <h4 className="">Sign Up</h4>
+          <div className="form-column">
             {data && alert("You are signed up doofus!")}
             <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Your username"
-                name="username"
-                type="text"
-                value={formState.username}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button
-                className="btn btn-block btn-info"
-                style={{ cursor: 'pointer' }}
-                type="submit"
-              >
+              <div className="input-container">
+              <label className="form-label" htmlFor="username">Username:</label>
+                <input
+                  className="form-input"
+                  placeholder="Make a Username"
+                  name="username"
+                  type="text"
+                  value={formState.username}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="input-container">
+                <label className="form-label" htmlFor="email">Email:</label>
+                <input
+                  className="form-input"
+                  placeholder="Your Email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="input-container">
+                <label className="form-label" htmlFor="password">Password:</label>
+                <input
+                  className="form-input"
+                  placeholder="Your Password"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                </div>
+                <button
+                  className="submitbttn"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
                 Submit
               </button>
             </form>
-
+            <div className='error-container'>
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="errorMsg">
                 {error.message}
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>
