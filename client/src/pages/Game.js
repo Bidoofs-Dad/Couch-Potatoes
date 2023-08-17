@@ -49,8 +49,8 @@ const Game = () => {
                 <ReviewForm gameId={gameId} gameName={gameDetails.name} />
                 </div>
             </div>
-            {/* <div className="col-12 col-md-8 mb-3">
-          {loading ? (
+            {/* { <div className="col-12 col-md-8 mb-3">
+             {loading ? (
             <div>Review</div>
           ) : (
             <ReviewList
@@ -58,7 +58,7 @@ const Game = () => {
               title="Please leave a review"
             />
           )}
-            </div> */}
+            </div> } */}
         </main>
     );
 };
