@@ -41,6 +41,20 @@ body, html {
     background-color: white;
 }
 
+.notLogin {
+    background-color: var(--gray);
+    padding-right: 100px;
+    padding-left: 100px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.notLogin h1 {
+    font-size: 40px;
+    text-align: center;
+    color: var(--pink);
+    text-shadow: 2px 2px var(--purple);
+}
+
 .user-profile {
     background-color: var(--gray);
     padding-right: 100px;

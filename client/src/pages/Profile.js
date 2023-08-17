@@ -28,11 +28,15 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <div>
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      <div className='page-container'>
+        <div className='content-container'>
+          <div className='notLogin'>
+          <h1>
+            You need to be logged in to see this. Use the navigation links above to
+            sign up or log in!
+          </h1>
+          </div>
+        </div>
       </div>
     );
   }
