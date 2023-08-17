@@ -28,18 +28,7 @@ return (
         </div>
 
         <div className="horizontal-bar">
-            <h1 className="genre-title">GENRE</h1>
-            <div className="bar-content">
-                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
-                <div className="small-box"></div>
-                <div className="small-box"></div>
-                <div className="small-box"></div>
-                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow"/>
-            </div>
-        </div>
-
-        <div className="horizontal-bar">
-            <h1 className="genre-title">BRAND</h1>
+            <h1 className="genre-title">HORROR</h1>
             <div className="bar-content">
                 <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
                 <div className="small-box"></div>
@@ -51,6 +40,28 @@ return (
 
         <div className="horizontal-bar">
             <h1 className="genre-title">INDIE</h1>
+            <div className="bar-content">
+                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow"/>
+            </div>
+        </div>
+
+        <div className="horizontal-bar">
+            <h1 className="genre-title">BETHESDA</h1>
+            <div className="bar-content">
+                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow"/>
+            </div>
+        </div>
+
+        <div className="horizontal-bar">
+            <h1 className="genre-title">MULTIPLAYER</h1>
             <div className="bar-content">
                 <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
                 <div className="small-box"></div>
