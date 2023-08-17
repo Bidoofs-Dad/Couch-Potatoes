@@ -9,6 +9,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
     const [horrorGames, setHorrorGames] = useState([]);
+    const [indieGames, setIndieGames] = useState([]);
 
     useEffect(() => {
         async function fetchHorrorGames() {
@@ -26,9 +27,30 @@ const Home = () => {
         fetchHorrorGames();
     }, []);
 
-    const randomIndex = () => {
+    useEffect(() => {
+        async function fetchIndieGames() {
+            try {
+                    const response = await fetchIndie();
+                    const indieData = await response.json();
+                    console.log(indieData.results);
+                    setIndieGames(indieData.results);
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchIndieGames();
+    }, []);
+
+    const randomHorrorIndex = () => {
         return Math.floor(Math.random() * horrorGames.length);
     };
+
+    const randomIndieIndex = () => {
+        return Math.floor(Math.random() * indieGames.length);
+    };
+
     return (
         <main className="page-container">
             <div className="content-container">
@@ -53,9 +75,9 @@ const Home = () => {
                     <h1 className="genre-title">HORROR</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><img src={horrorGames[randomIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
-                        <div className="small-box"><img src={horrorGames[randomIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
-                        <div className="small-box"><img src={horrorGames[randomIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
@@ -64,9 +86,9 @@ const Home = () => {
                     <h1 className="genre-title">INDIE</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"></div>
-                        <div className="small-box"></div>
-                        <div className="small-box"></div>
+                        <div className="small-box"><img src={indieGames[randomIndieIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={indieGames[randomIndieIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={indieGames[randomIndieIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
