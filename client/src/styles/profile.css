@@ -110,21 +110,25 @@ body, html {
     border: 6px solid var(--pink);
 }
 
+.gameName {
+    font-size: 25px;
+    color: var(--pink);
+    text-shadow: 2px 2px var(--purple);
+}
+
+.reviewText {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
 .reviewCon {
-    width: calc(50%);
-    height: fit-content;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: center;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    background-color: var(--lavender);
-    box-shadow: 8px 8px 2px var(--light-pink); 
 }
-
+/*
 .gameName {
     background-color: aliceblue;
     border: 2px solid var(--light-pink);
@@ -140,4 +144,4 @@ body, html {
 
 .titleName {
     display: block;
-}
+} */
