@@ -60,6 +60,20 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <div className='favList'>
+        <div className='favCon'>
+          <div className='favGame'></div>
+        </div>
+
+        <div className='favCon'>
+          <div className='favGame'></div>
+        </div>
+
+        <div className='favCon'>
+          <div className='favGame'></div>
+        </div>
+      </div>
+      
 <div className="temp">
           <ReviewList
             reviews={user.reviews}

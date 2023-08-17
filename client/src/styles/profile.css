@@ -108,3 +108,13 @@ body, html {
     padding: 15px;
     border: 6px solid var(--pink);
 }
+
+.reviewCon {
+    width: calc(30% - 1rem);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--lavender);
+    box-shadow: 8px 8px 2px var(--light-pink); 
+}
