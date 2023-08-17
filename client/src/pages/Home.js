@@ -10,6 +10,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
     const [horrorGames, setHorrorGames] = useState([]);
     const [indieGames, setIndieGames] = useState([]);
+    const [bethesdaGames, setBethesdaGames] = useState([]);
 
     useEffect(() => {
         async function fetchHorrorGames() {
@@ -43,12 +44,32 @@ const Home = () => {
         fetchIndieGames();
     }, []);
 
+    useEffect(() => {
+        async function fetchBethesdaGames() {
+            try {
+                    const response = await fetchBethesda();
+                    const bethesdaData = await response.json();
+                    console.log(bethesdaData.results);
+                    setIndieGames(bethesdaData.results);
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchBethesdaGames();
+    }, []);
+
     const randomHorrorIndex = () => {
         return Math.floor(Math.random() * horrorGames.length);
     };
 
     const randomIndieIndex = () => {
         return Math.floor(Math.random() * indieGames.length);
+    };
+
+    const randomBethesdaIndex = () => {
+        return Math.floor(Math.random() * bethesdaGames.length);
     };
 
     return (
@@ -97,9 +118,9 @@ const Home = () => {
                     <h1 className="genre-title">BETHESDA</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"></div>
-                        <div className="small-box"></div>
-                        <div className="small-box"></div>
+                        <div className="small-box"><img src={bethesdaGames[randomBethesdaIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={bethesdaGames[randomBethesdaIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={bethesdaGames[randomBethesdaIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
