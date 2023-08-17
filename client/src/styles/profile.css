@@ -109,12 +109,12 @@ body, html {
 
 .gameName {
     background-color: aliceblue;
-    border: 1px solid black;
+    border: 2px solid var(--light-pink);
     padding-bottom: 3px;
 }
 
 .reviewText {
     background-color: aliceblue;
-    border: 1px solid black;
+    border: 2px solid var(--light-pink);
     padding-bottom: 3px;
 }
