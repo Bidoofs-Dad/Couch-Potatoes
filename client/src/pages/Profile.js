@@ -1,6 +1,9 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import ReviewList from '../components/ReviewList';
+import '../styles/profile.css';
+import donkey from '../styles/donkey.png'
 
 import { QUERY_USERS, QUERY_ME } from '../utils/queries';
 
@@ -25,21 +28,62 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      <div className='page-container'>
+        <div className='content-container'>
+          <div className='notLogin'>
+          <h1>
+            You need to be logged in to see this. Use the navigation links above to
+            sign up or log in!
+          </h1>
+          </div>
+        </div>
+      </div>
     );
   }
 
   return (
-    <div>
-        <div>
-            <h2>{user.username}</h2>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
+    <div className='page-container'>
+    <div className='content-container'>
+      <div className='user-profile'>
+        <h1>{user.username}'s Profile</h1>
+        <div className='profile-info'>
+          <img className='profile-photo' src={donkey} alt='User' />
+          <div className='user-info'>
+            <div className='info-item'>
+              <h2>Username:</h2>
+              <p>{user.username}</p>
+            </div>
+            <div className='info-item'>
+              <h2>Email:</h2>
+              <p>{user.email}</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className='favList'>
+        <div className='favCon'>
+          <div className='favGame'></div>
+        </div>
+
+        <div className='favCon'>
+          <div className='favGame'></div>
+        </div>
+
+        <div className='favCon'>
+          <div className='favGame'></div>
+        </div>
+      </div>
+      
+<div className="temp">
+          <ReviewList
+            reviews={user.reviews}
+            title={`${user.username}'s thoughts...`}
+            showTitle={false}
+            showUsername={false}
+          />
+      </div>
     </div>
+  </div>
   );
 };
 

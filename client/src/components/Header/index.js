@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import '../components.css'
 import cLogo from '../assets/potatoIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClosedCaptioning, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 
 import { Link } from 'react-router-dom';
 import '../components.css'
@@ -33,9 +36,9 @@ const Header = () => {
                 <form>
                     <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
                     <Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => {
-            localStorage.setItem('searchInput', searchInput);
-            window.location.assign(`/search-results?search=${searchInput}`); // This line reloads the page
-        }} >
+
+                        localStorage.setItem('searchInput', searchInput);}}>
+
                         <FontAwesomeIcon icon={faSearch} className='searchIcon' />
                     </Link>
                 </form>
@@ -56,24 +59,18 @@ const Header = () => {
 
                     </Link>
 
-                    {/* <Link to='/Login'>
-                        <div className='btn'>
-                            <span id="loginLogoutButtonContainer">
-                                <button id="loginButton" className="LogOn-button">Login</button>
-                                <button id="logoutButton" className="LogOn-button">Logout</button>
-                            </span>
-                        </div>
-                    </Link> */}
                     {Auth.loggedIn() ? (
-                        <button id="logoutButton" className="LogOn-button" onClick={logout}>
-                            Logout
-                        </button>
-                    ) : (
-                        <div className='btn'>
-                            <span id="loginLogoutButtonContainer">
-                                <Link to='login'><button id="loginButton" className="LogOn-button">Login</button></Link>
-                            </span>
+                        <div className="icon-container">
+                            <FontAwesomeIcon icon={faRightToBracket} id="logoutButton" className="logOn-button" onClick={logout}/>
+                            <span className="icon-caption">LOGOUT</span>
                         </div>
+                    ) : (
+                        <Link to='login' className='noDecor'>
+                            <div className='icon-container'>
+                                <FontAwesomeIcon icon={faArrowRight} id="loginButton" className="logOn-button"/>
+                                <span className="icon-caption">LOG IN</span>
+                            </div>
+                        </Link>
                     )}
                 </div>
             </div>

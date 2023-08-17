@@ -9,7 +9,7 @@
     --light-purple: #D0D1FF;
     --electric-blue: #42cdfc;
     --blue: #C0FDFF;
-    --gray: #b8b8b8;
+    --gray: #e6e6e6;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -40,34 +40,125 @@ body, html {
     background-color: white;
 }
 
-.large-box {
-    background-color: lightblue;
-    padding: 20px;
-    margin-bottom: 10px;
+/* HOME PAGE */
+.c-rotate{
+  display: flex;
+  flex-direction: column; /* Add this line to make items stack vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  background-color: var(--lavender);
+  box-shadow: 8px 8px 2px var(--light-pink);
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.cImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-left: 70px;
+  box-shadow: 8px 8px 2px var(--electric-blue);
 }
 
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 48%;
-    background-color: lightgray;
-    padding: 10px;
+.cIcon-container {
+  display: flex;
+  justify-content: space-between; /* Spread icons evenly */
+  flex-direction: row !important;
+  margin-top: 20px; /* Adjust margin as needed */
+  width: 80%; /* Set the width for the icon container */
+  max-width: 400px; /* Limit the width to prevent overflow */
+}
+
+.cIcon {
+  color: white;
+}
+
+.icon-arrow {
+  font-size: 60px;
+}
+
+.icon-arrow:hover {
+  color: var(--gray);
+  animation: wiggle 0.5s infinite;
+}
+
+.icon-circle {
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+.icon-circle:hover {
+  color: var(--electric-blue);
+  animation: wiggle 0.5s infinite;
+}
+
+.icon-circle-active {
+  color: var(--electric-blue);
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.game-title {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom */
+  left: 10px; /* Adjust the distance from the left */
+  font-size: 40px; /* Adjust the font size */
+  color: white; /* Adjust the text color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
+  margin-left: 100px;
+}
+
+.genre-title {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 30px; /* Adjust font size as needed */
+  color: white; /* Adjust color as needed */
+  text-shadow: 3px 3px var(--pink);
+  text-align: left;
+  width: 80%; /* Adjust width as needed */
+  max-width: 1400px;
+}
+
+.horizontal-bar {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 30px; /* Adjust as needed */
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: var(--lavender);
+  box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.bar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .small-box {
-    background-color: white;
-    margin: 5px;
-    padding: 10px;
+  width: calc(33.33% - 10px); /* Divide into three equal-width boxes with spacing */
+  height: 100px; /* Adjust height as needed */
+  background-color: var(--electric-blue); /* Adjust color as needed */
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
+.sb-Arrow {
+  margin-top: 12px;
+}
+
+
+/* ANIMATIONS */
 @media (max-width: 768px) {
     .content-container {
         padding: 0 10px;
@@ -123,7 +214,6 @@ animation: popUp .3s ease-in;
 }
 
 .pic-con{
-  text-align: center;
   padding: 10px;
 }
 
@@ -235,32 +325,87 @@ animation: popUp .3s ease-in;
 }
 
 .game-item {
-    width: calc(30% - 1rem);
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    background-color: var(--lavender);
-    box-shadow: 8px 8px 2px var(--light-pink);
+  width: calc(30% - 1rem);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column; /* Add this line to make items stack vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 10px;
+  background-color: var(--lavender);
+  box-shadow: 8px 8px 2px var(--light-pink);
+  text-decoration: none;
+}
+
+.game-item:hover {
+  background-color: var(--purple);
 }
 
 .game-card {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .game-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
 }
 
 .game-name {
-    display: block;
-    margin-top: 0.5rem;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
+  display: block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+/* GAME PAGE */
+.game-image-spec {
+    width: 75%;
+    margin: 25px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.game-name-spec {
+    font-size: 40px;
+    color: var(--pink);
+    text-shadow: 2px 2px var(--purple);
+    padding-bottom: 20px;
+}
+
+.game-desc {
+    background-color: var(--gray);
+    padding: 20px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+    margin-bottom: 30px;
+}
+
+.game-rating {
+    margin-bottom: 30px;
+}
+
+.review-con {
+    margin-bottom: 30px;
+    background-color: var(--gray);
+    padding: 20px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.rating-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+.rating {
+    width: 50%;
+    text-align: center;
+    background-color: var(--gray);
+    padding: 20px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+
 }
 
 .signup-btn {

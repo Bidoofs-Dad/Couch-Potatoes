@@ -1,37 +1,67 @@
 import React from 'react';
 import '../styles/style.css';
+import bgate from '../styles/bgateimage.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
 return (
-    <div className="page-container">
-    <main className="content-container">
-    <div className="large-box">Large Box</div>
-            <div className="row">
-                <div className="box">
-                    <div className="small-box">Small Box 1</div>
-                    <div className="small-box">Small Box 2</div>
+    <main className="page-container">
+    <div className="content-container">
+        <div className='c-rotate'>
+            <div className='image-container'>
+                <img src={bgate} alt='' className='cImage'/>
+                <div className='game-title'>
+                    Baldur's Gate III
                 </div>
             </div>
-            <div className="row">
-                <div className="box">
-                    <div className="small-box">Small Box 3</div>
-                    <div className="small-box">Small Box 4</div>
-                </div>
+            <div className='cIcon-container'>
+                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow"/>
+                <FontAwesomeIcon icon={faCircle} className="cIcon icon-circle icon-circle-active"/>
+                <FontAwesomeIcon icon={faCircle} className="cIcon icon-circle"/>
+                <FontAwesomeIcon icon={faCircle} className="cIcon icon-circle"/>
+                <FontAwesomeIcon icon={faCircle} className="cIcon icon-circle"/>
+                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow"/>
             </div>
-            <div className="row">
-                <div className="box">
-                    <div className="small-box">Small Box 5</div>
-                    <div className="small-box">Small Box 6</div>
-                </div>
+        </div>
+
+        <div className="horizontal-bar">
+            <h1 className="genre-title">GENRE</h1>
+            <div className="bar-content">
+                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow"/>
             </div>
-            <div className="row">
-                <div className="box">
-                    <div className="small-box">Small Box 7</div>
-                    <div className="small-box">Small Box 8</div>
-                </div>
+        </div>
+
+        <div className="horizontal-bar">
+            <h1 className="genre-title">BRAND</h1>
+            <div className="bar-content">
+                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow"/>
             </div>
-    </main>
+        </div>
+
+        <div className="horizontal-bar">
+            <h1 className="genre-title">INDIE</h1>
+            <div className="bar-content">
+                <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow"/>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <div className="small-box"></div>
+                <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow"/>
+            </div>
+        </div>
+
     </div>
+    </main>
     );
 };
 
