@@ -153,6 +153,12 @@ body, html {
   margin-right: 15px;
 }
 
+.homeGames {
+  width: 98%; /* Divide into three equal-width boxes with spacing */
+  height: 96px; /* Adjust height as needed */
+  padding:2px;
+}
+
 .sb-Arrow {
   margin-top: 12px;
 }
