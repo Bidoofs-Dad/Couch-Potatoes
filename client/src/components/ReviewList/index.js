@@ -54,19 +54,15 @@ const ReviewList = ({
       {reviews &&
         reviews.map((review) => (
           <div key={review._id} className="temp">
-            <h4 className="temp">
-
+            <div className="temp">
               <div className='reviewCon'>
                 <div className="temp">
                 <Link to={`/game/${review.gameId}`} className='noDecor'><p className='gameName'>{review.gameName}</p></Link>
                 </div>
-                <br>
-                </br>
                 <div className="reviewText">
                   <p>{review.reviewText}</p>
                 </div>
-              </div>
-              {showUsername ? (
+                {showUsername ? (
                 <Link
                   className="temp"
                   to={`/profiles/${review.reviewUser}`}
@@ -84,10 +80,8 @@ const ReviewList = ({
                   
                 </>
               )}
-            </h4>
-            <br></br>
-            
-
+              </div>
+            </div>
           </div>
         ))}
     </div>
