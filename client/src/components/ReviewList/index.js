@@ -53,12 +53,13 @@ const ReviewList = ({
       {reviews &&
         reviews.map((review) => (
           <div key={review._id} className="temp">
-        
             <h4 className="temp">
+
               <div className='reviewCon'>
                 <div className="temp">
                   <p className='gameName'>{review.gameName}</p>
                 </div>
+                
                 <div className="reviewText">
                   <p>{review.reviewText}</p>
                 </div>
