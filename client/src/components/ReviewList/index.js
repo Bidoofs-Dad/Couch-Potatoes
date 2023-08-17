@@ -57,9 +57,9 @@ const ReviewList = ({
             <h4 className="temp">
               <div className='reviewCon'>
                 <div className="temp">
-                  <p>{review.gameName}</p>
+                  <p className='gameName'>{review.gameName}</p>
                 </div>
-                <div className="temp">
+                <div className="reviewText">
                   <p>{review.reviewText}</p>
                 </div>
               </div>
