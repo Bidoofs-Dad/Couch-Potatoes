@@ -41,7 +41,7 @@ const Header = () => {
                 </form>
 
                 <div className="links">
-                    <Link to='/Profile' className='user-fav'>
+                    <Link to='/me' className='user-fav'>
                         <div className="icon-container">
                             <FontAwesomeIcon icon={faUser} className="userLink" />
                             <span className="icon-caption">USER</span>

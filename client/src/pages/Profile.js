@@ -1,10 +1,12 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import ReviewList from '../components/ReviewList';
 
 import { QUERY_USERS, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import ReviewForm from '../components/ReviewForm';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -16,7 +18,7 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/Profile"/>;
+    return <Navigate to="/me"/>;
   }
 
   if (loading) {
@@ -35,10 +37,28 @@ const Profile = () => {
   return (
     <div>
         <div>
-            <h2>User Profile</h2>
+            <h2>{user.username}</h2>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
         </div>
+
+        <div className="temp">
+          <ReviewList
+            reviews={user.reviews}
+            title={`${user.username}'s thoughts...`}
+            showTitle={false}
+            showUsername={false}
+          />
+        </div>
+
+        {!userParam && (
+          <div
+            className="temp"
+            style={{ border: '1px dotted #1a1a1a' }}
+          >
+            <ReviewForm />
+          </div>
+        )}
     </div>
   );
 };
