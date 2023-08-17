@@ -134,3 +134,7 @@ body, html {
     border: 2px solid var(--light-pink);
     padding-bottom: 3px;
 }
+
+.titleName {
+    display: block;
+}
