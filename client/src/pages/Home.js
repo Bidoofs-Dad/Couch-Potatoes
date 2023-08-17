@@ -11,6 +11,7 @@ const Home = () => {
     const [horrorGames, setHorrorGames] = useState([]);
     const [indieGames, setIndieGames] = useState([]);
     const [bethesdaGames, setBethesdaGames] = useState([]);
+    const [multiplayerGames, setMultiplayerGames] = useState([]);
 
     useEffect(() => {
         async function fetchHorrorGames() {
@@ -50,7 +51,7 @@ const Home = () => {
                     const response = await fetchBethesda();
                     const bethesdaData = await response.json();
                     console.log(bethesdaData.results);
-                    setIndieGames(bethesdaData.results);
+                    setBethesdaGames(bethesdaData.results);
                 
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -58,6 +59,22 @@ const Home = () => {
         }
 
         fetchBethesdaGames();
+    }, []);
+
+    useEffect(() => {
+        async function fetchMultiplayerGames() {
+            try {
+                    const response = await fetchMultiplayer();
+                    const multiplayerData = await response.json();
+                    console.log(multiplayerData.results);
+                    setMultiplayerGames(multiplayerData.results);
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchMultiplayerGames();
     }, []);
 
     const randomHorrorIndex = () => {
@@ -70,6 +87,10 @@ const Home = () => {
 
     const randomBethesdaIndex = () => {
         return Math.floor(Math.random() * bethesdaGames.length);
+    };
+
+    const randomMultiplayerIndex = () => {
+        return Math.floor(Math.random() * multiplayerGames.length);
     };
 
     return (
@@ -129,9 +150,9 @@ const Home = () => {
                     <h1 className="genre-title">MULTIPLAYER</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"></div>
-                        <div className="small-box"></div>
-                        <div className="small-box"></div>
+                        <div className="small-box"><img src={multiplayerGames[randomMultiplayerIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={multiplayerGames[randomMultiplayerIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
+                        <div className="small-box"><img src={multiplayerGames[randomMultiplayerIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
