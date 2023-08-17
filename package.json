@@ -16,6 +16,7 @@
     "concurrently": "^7.6.0"
   },
   "dependencies": {
+    "materialize-css": "^1.0.0-rc.2",
     "node-fetch": "^3.3.2"
   }
 }

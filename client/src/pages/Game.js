@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_REVIEWS } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import { individualGame } from '../utils/API';
 import ReviewForm from '../components/ReviewForm';
+import ReviewList from '../components/ReviewList'
 import '../styles/style.css';
 
 const Game = () => {
     const { gameId } = useParams();
     const [gameDetails, setGameDetails] = useState(null);
+
+    const { loading, data } = useQuery(gameId ? QUERY_REVIEWS : QUERY_REVIEWS, {
+        variables: { gameId },
+    });
+
+    const reviews = data?.reviews || [];
+
+    const filteredReviews = reviews.filter(review => review.gameId === gameId);
 
     useEffect(() => {
         async function fetchGameDetails() {
@@ -23,10 +34,12 @@ const Game = () => {
         fetchGameDetails();
     }, [gameId]);
 
-    if (!gameDetails) {
+    if (loading || !gameDetails) {
         return <div>Loading...</div>;
     }
+
     
+
     return (
         <main>
             <div className='page-container'>
@@ -51,7 +64,15 @@ const Game = () => {
                     </div>
 
                     <div className='review-con'>
-                            <ReviewForm gameId={gameId} gameName={gameDetails.name} />
+                        <ReviewForm gameId={gameId} gameName={gameDetails.name} />
+                    </div>
+                    <div className='review-con'>
+                        <ReviewList
+                            reviews={filteredReviews}
+                            title={`${reviews.reviewUser}'s thoughts...`}
+                            showTitle={false}
+                            showUsername={false}
+                        />
                     </div>
                 </div>
             </div>

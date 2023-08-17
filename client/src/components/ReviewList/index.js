@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../components.css'
 
 const ReviewList = ({
   reviews,
@@ -53,14 +54,17 @@ const ReviewList = ({
       {reviews &&
         reviews.map((review) => (
           <div key={review._id} className="temp">
-            
             <h4 className="temp">
-            <div className="temp">
-              <p>{review.gameName}</p>
-            </div>
-            <div className="temp">
-              <p>{review.reviewText}</p>
-            </div>
+
+              <div className='reviewCon'>
+                <div className="temp">
+                <Link to={`/game/${review.gameId}`} className='noDecor'><p className='gameName'>{review.gameName}</p></Link>
+                </div>
+                
+                <div className="reviewText">
+                  <p>{review.reviewText}</p>
+                </div>
+              </div>
               {showUsername ? (
                 <Link
                   className="temp"

@@ -109,3 +109,27 @@ body, html {
     padding: 15px;
     border: 6px solid var(--pink);
 }
+
+.reviewCon {
+    width: calc(50% - 1rem);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    background-color: var(--lavender);
+    box-shadow: 8px 8px 2px var(--light-pink); 
+}
+
+.gameName {
+    background-color: aliceblue;
+    border: 2px solid var(--light-pink);
+    padding-bottom: 3px;
+}
+
+.reviewText {
+    background-color: aliceblue;
+    border: 2px solid var(--light-pink);
+    padding-bottom: 3px;
+}
