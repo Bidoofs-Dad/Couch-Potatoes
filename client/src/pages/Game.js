@@ -17,6 +17,8 @@ const Game = () => {
 
     const reviews = data?.reviews || {};
 
+    const filteredReviews = reviews.filter(review => review.gameId === gameId);
+
 
     useEffect(() => {
         async function fetchGameDetails() {
@@ -65,7 +67,7 @@ const Game = () => {
                     </div>
                     <div className='review-con'>
                         <ReviewList
-                            reviews={reviews}
+                            reviews={filteredReviews}
                             title={`${reviews.reviewUser}'s thoughts...`}
                             showTitle={false}
                             showUsername={false}
