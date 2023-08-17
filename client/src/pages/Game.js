@@ -31,7 +31,7 @@ const Game = () => {
             <div className="game-con">
 
                 <div className="game-pic">
-                    <img src={gameDetails.background_image} alt="The Game!" />
+                    <img src={gameDetails.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" />
                     <div className="game-name">{gameDetails.name}</div>
 
                 </div>

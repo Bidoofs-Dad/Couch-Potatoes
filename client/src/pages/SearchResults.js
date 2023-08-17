@@ -29,7 +29,7 @@ function SearchResults() {
       <div>
         {games.map(game => (
           <div key={game.id}>
-            <img src={game.background_image} alt='the game' style={{ width: 350 }}/><br></br>
+            <img src={game.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" style={{ width: 350 }}/><br></br>
             <Link to={`/game/${game.id}`}>{game.name}</Link>
           </div>
         ))}
