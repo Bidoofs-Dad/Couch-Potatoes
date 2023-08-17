@@ -263,4 +263,14 @@ animation: popUp .3s ease-in;
     font-size: 20px;
 }
 
+.signup-btn {
+    color:var(--light-pink);
+    padding-top: 10px;
+    text-shadow: 2px 2px var(--purple);
+}
+
+.noDecor {
+    text-decoration: none;
+}
+
 

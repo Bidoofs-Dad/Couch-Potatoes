@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 import '../styles/style.css'
 
 import Auth from '../utils/auth';
@@ -77,6 +78,13 @@ const Login = (props) => {
             Submit
           </button>
         </form>
+
+        <Link to='/Signup' className='signup noDecor'>
+                        <div className="icon-container">
+                            <span className="icon-caption, signup-btn">SIGN UP!</span>
+                        </div>
+
+                    </Link>
         {error && (
           <div className="errorMsg">
             {error.message}
