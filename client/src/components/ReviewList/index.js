@@ -7,19 +7,63 @@ const ReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+
+// const mappedReviews = () => {
+//   reviews.map((review) => {
+//   console.log(review);
+//   return (
+//     <div key={review._id} className="temp">
+            
+//             <h4 className="temp">
+//               {showUsername ? (
+//                 <Link
+//                   className="temp"
+//                   to={`/profiles/${review.reviewUser}`}
+//                 >
+//                   {review.reviewUser} <br />
+//                   <span style={{ fontSize: '1rem' }}>
+//                     left this review on {review.dateCreated}
+//                   </span>
+//                 </Link>
+//               ) : (
+//                 <>
+//                   <span style={{ fontSize: '1rem' }}>
+//                     You left this review on {review.dateCreated}
+//                   </span>
+//                 </>
+//               )}
+//             </h4>
+//             <div className="temp">
+//               <p>{review.reviewText}</p>
+//             </div>
+
+//           </div>
+//   )
+// })
+// }
+
+
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
+      {/* {mappedReviews()} */}
       {reviews &&
         reviews.map((review) => (
-          <div key={review._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+          <div key={review._id} className="temp">
+            
+            <h4 className="temp">
+            <div className="temp">
+              <p>{review.gameName}</p>
+            </div>
+            <div className="temp">
+              <p>{review.reviewText}</p>
+            </div>
               {showUsername ? (
                 <Link
-                  className="text-light"
+                  className="temp"
                   to={`/profiles/${review.reviewUser}`}
                 >
                   {review.reviewUser} <br />
@@ -32,18 +76,13 @@ const ReviewList = ({
                   <span style={{ fontSize: '1rem' }}>
                     You left this review on {review.dateCreated}
                   </span>
+                  
                 </>
               )}
             </h4>
-            <div className="card-body bg-light p-2">
-              <p>{review.reviewText}</p>
-            </div>
-            <Link
-              className="btn btn-primary btn-block btn-squared"
-              to={`/reviews/${review._id}`}
-            >
-              Whatcha gotta say about that??
-            </Link>
+            <br></br>
+            
+
           </div>
         ))}
     </div>

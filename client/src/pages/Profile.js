@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import ReviewList from '../components/ReviewList';
 import '../styles/profile.css';
 import donkey from '../styles/donkey.png'
 
@@ -40,7 +41,7 @@ const Profile = () => {
     <div className='page-container'>
     <div className='content-container'>
       <div className='user-profile'>
-        <h1>User Profile</h1>
+        <h1>{user.username}'s Profile</h1>
         <div className='profile-info'>
           <img className='profile-photo' src={donkey} alt='User' />
           <div className='user-info'>
@@ -55,6 +56,15 @@ const Profile = () => {
           </div>
         </div>
       </div>
+<div className="temp">
+          <ReviewList
+            reviews={user.reviews}
+            title={`${user.username}'s thoughts...`}
+            showTitle={false}
+            showUsername={false}
+          />
+        </div>
+
     </div>
   </div>
   );
