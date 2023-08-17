@@ -37,7 +37,7 @@ const Header = () => {
                     <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
                     <Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => {
             localStorage.setItem('searchInput', searchInput);
-           // window.location.assign(`/search-results?search=${searchInput}`); This line reloads the page
+            window.location.reload(); //This line reloads the page
         }} >
                         <FontAwesomeIcon icon={faSearch} className='searchIcon' />
                     </Link>
