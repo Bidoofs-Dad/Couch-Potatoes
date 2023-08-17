@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import '../styles/profile.css';
+import donkey from '../styles/donkey.png'
 
 import { QUERY_USERS, QUERY_ME } from '../utils/queries';
 
@@ -25,21 +27,36 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
+      <div>
       <h4>
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
+      </div>
     );
   }
 
   return (
-    <div>
-        <div>
-            <h2>User Profile</h2>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
+    <div className='page-container'>
+    <div className='content-container'>
+      <div className='user-profile'>
+        <h1>User Profile</h1>
+        <div className='profile-info'>
+          <img className='profile-photo' src={donkey} alt='User' />
+          <div className='user-info'>
+            <div className='info-item'>
+              <h2>Username:</h2>
+              <p>{user.username}</p>
+            </div>
+            <div className='info-item'>
+              <h2>Email:</h2>
+              <p>{user.email}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
   );
 };
 
