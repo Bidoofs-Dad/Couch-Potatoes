@@ -186,7 +186,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Paul Tuemler - [@paul-tuemler](https://twitter.com/your_username) - paultuemler@yahoo,com
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Zane Werle - [@your_twitter](https://twitter.com/your_username) - zanewerle@gmail.com
+
+Jayden Scheffenhauer - [@your_twitter](https://twitter.com/your_username) - jdrich135@gmail.com
+
+Eric Bester - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
 Project Link: [https://github.com/Bidoofs-Dad/Couch-Potatoes](https://github.com/Bidoofs-Dad/Couch-Potatoes)
 
