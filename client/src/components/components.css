@@ -113,20 +113,15 @@ header {
   cursor: pointer;
   text-shadow: 2px 2px var(--purple);
 }
-  
-.logout,
-.login,
-.signup {
-  background: none;
-  border: none;
-  color: black;
+
+.logOn-button {
   cursor: pointer;
+  color: var(--pink);
+  font-size: 40px;
 }
-  
-.logout:hover,
-.login:hover,
-.signup:hover {
-    color: #ddd;
+
+.logOn-button:hover {
+  color: var(--purple2);
 }
 
 /* FOOTER */
