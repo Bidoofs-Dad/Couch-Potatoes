@@ -72,8 +72,6 @@ const Header = () => {
                         <div className='btn'>
                             <span id="loginLogoutButtonContainer">
                                 <Link to='login'><button id="loginButton" className="LogOn-button">Login</button></Link>
-                                {' '}
-                                <Link to='/signup'><button id="signupButton" className="LogOn-button">Sign Up</button></Link>
                             </span>
                         </div>
                     )}
