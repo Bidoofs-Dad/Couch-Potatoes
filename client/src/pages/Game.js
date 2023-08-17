@@ -15,10 +15,9 @@ const Game = () => {
         variables: { gameId },
     });
 
-    const reviews = data?.reviews || {};
+    const reviews = data?.reviews || [];
 
     const filteredReviews = reviews.filter(review => review.gameId === gameId);
-
 
     useEffect(() => {
         async function fetchGameDetails() {
@@ -38,6 +37,8 @@ const Game = () => {
     if (loading || !gameDetails) {
         return <div>Loading...</div>;
     }
+
+    
 
     return (
         <main>
