@@ -2,7 +2,6 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-const fetchData = require('./utils/fetch')
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -26,8 +25,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-app.get('/api', async (req, res) => {
-  const data = await fetchData();
+app.get('/api', async (req, res) => {  const data = await fetchData();
   console.log(data);
   // res.json(data);
 });
