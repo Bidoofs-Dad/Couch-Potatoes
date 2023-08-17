@@ -9,7 +9,7 @@
     --light-purple: #D0D1FF;
     --electric-blue: #42cdfc;
     --blue: #C0FDFF;
-    --gray: #b8b8b8;
+    --gray: #e6e6e6;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -123,7 +123,6 @@ animation: popUp .3s ease-in;
 }
 
 .pic-con{
-  text-align: center;
   padding: 10px;
 }
 
@@ -261,6 +260,55 @@ animation: popUp .3s ease-in;
     text-decoration: none;
     color: white;
     font-size: 20px;
+}
+
+/* GAME PAGE */
+.game-image-spec {
+    width: 75%;
+    margin: 25px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.game-name-spec {
+    font-size: 40px;
+    color: var(--pink);
+    text-shadow: 2px 2px var(--purple);
+    padding-bottom: 20px;
+}
+
+.game-desc {
+    background-color: var(--gray);
+    padding: 20px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+    margin-bottom: 30px;
+}
+
+.game-rating {
+    margin-bottom: 30px;
+}
+
+.review-con {
+    margin-bottom: 30px;
+    background-color: var(--gray);
+    padding: 20px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.rating-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+.rating {
+    width: 50%;
+    text-align: center;
+    background-color: var(--gray);
+    padding: 20px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+
 }
 
 .signup-btn {
