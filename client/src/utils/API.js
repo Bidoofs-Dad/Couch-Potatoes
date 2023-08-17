@@ -1,7 +1,7 @@
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export const searchGames = (query) => {
-  return fetch(`https://api.rawg.io/api/games?search=${query}&key=${apiKey}`);
+  return fetch(`https://api.rawg.io/api/games?search=${query}&key=ac7de14847e84d37be3b60940720db8c`);
 };
 
 export const individualGame = (query) => {
