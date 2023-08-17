@@ -57,7 +57,7 @@ const ReviewList = ({
             <h4 className="temp">
 
               <div className='reviewCon'>
-                <div className="temp">
+                <div className="titleName">
                 <Link to={`/game/${review.gameId}`} className='noDecor'><p className='gameName'>{review.gameName}</p></Link>
                 </div>
                 
