@@ -60,7 +60,8 @@ const ReviewList = ({
                 <div className="titleName">
                 <Link to={`/game/${review.gameId}`} className='noDecor'><p className='gameName'>{review.gameName}</p></Link>
                 </div>
-                
+                <br>
+                </br>
                 <div className="reviewText">
                   <p>{review.reviewText}</p>
                 </div>
