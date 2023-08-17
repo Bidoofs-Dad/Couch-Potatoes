@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { searchGames } from '../utils/API';
+import '../styles/style.css';
 
 function SearchResults() {
   const [games, setGames] = useState([]);
@@ -24,15 +25,22 @@ function SearchResults() {
   }, [searchInput]);
 
   return (
-    <div>
-      <h1>Game List</h1>
-      <div>
-        {games.map(game => (
-          <div key={game.id}>
-            <img src={game.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" style={{ width: 350 }}/><br></br>
-            <Link to={`/game/${game.id}`}>{game.name}</Link>
+
+    <div className='page-container'>
+      <div className='content-container'>
+        <div className='games'>
+          <div className='game-row'>
+            {games.map((game, index) => (
+              <div key={game.id} className='game-item'>
+                <div className='game-card'>
+                  <img src={game.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='game-image' />
+                  <Link to={`/game/${game.id}`} className='game-name'>{game.name}</Link>
+                </div>
+              </div>
+            ))}
+
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

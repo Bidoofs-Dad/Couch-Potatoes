@@ -9,7 +9,7 @@
     --light-purple: #D0D1FF;
     --electric-blue: #42cdfc;
     --blue: #C0FDFF;
-    --gray: #F5F5F5;
+    --gray: #b8b8b8;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -222,5 +222,45 @@ animation: popUp .3s ease-in;
     max-height: 60px; /* Set a maximum height for the error container */
     margin-top: 10px; /* Adjust the margin as needed */
   }
+
+/* GAME SEARCH */
+.game-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.game-item {
+    width: calc(30% - 1rem);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--lavender);
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.game-card {
+    width: 100%;
+    text-align: center;
+}
+
+.game-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+}
+
+.game-name {
+    display: block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
 
 
