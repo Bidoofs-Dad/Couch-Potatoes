@@ -1,0 +1,96 @@
+:root {
+    --light-pink: #FFCBF2;
+    --pink: #F3C4FB;
+    --purple-pink: #ECBCFD;
+    --light-purple: #E5B3FE;
+    --purple2: #E2AFFF;
+    --purple: #DEAAFF;
+    --lavender: #D8BBFF;
+    --light-purple: #D0D1FF;
+    --electric-blue: #42cdfc;
+    --blue: #C0FDFF;
+    --gray: #e6e6e6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    background-color: var(--gray);
+}
+
+.content-container {
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.user-profile {
+    background-color: var(--gray);
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 40px;
+    box-shadow: 8px 8px 2px var(--light-pink);
+}
+
+.profile-info {
+    display: flex;
+    align-items: flex-start; /* Align items at the top of the container */
+    margin-top: 20px; /* Space between title and info */
+    padding-top: 20px; /* Add padding to vertically center the photo */
+  }
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* To create a circular photo */
+    margin-right: 30px;
+    margin-top: 70px;
+
+    border: 6px solid var(--pink); /* Pink border color */
+    box-sizing: border-box; /* Include border in element's total width and height */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.user-profile h1 {
+    font-size: 40px;
+    text-align: center;
+    color: var(--pink);
+    text-shadow: 2px 2px var(--purple);
+}
+
+.user-profile h2 {
+    font-size: 25px;
+    color: var(--pink);
+    text-shadow: 2px 2px var(--purple);
+}
+
+.user-profile p {
+    background-color: white;
+    padding: 15px;
+    border: 6px solid var(--pink);
+}
