@@ -81,8 +81,7 @@ const Profile = () => {
             showTitle={false}
             showUsername={false}
           />
-        </div>
-
+      </div>
     </div>
   </div>
   );
