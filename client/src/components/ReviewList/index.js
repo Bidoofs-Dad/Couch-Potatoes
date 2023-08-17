@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../components.css'
 
 const ReviewList = ({
   reviews,
@@ -57,7 +58,7 @@ const ReviewList = ({
 
               <div className='reviewCon'>
                 <div className="temp">
-                  <p className='gameName'>{review.gameName}</p>
+                <Link to={`/game/${review.gameId}`} className='noDecor'><p className='gameName'>{review.gameName}</p></Link>
                 </div>
                 
                 <div className="reviewText">
