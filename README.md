@@ -186,7 +186,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Paul Tuemler - [@paul-tuemler](https://twitter.com/your_username) - paultuemler@yahoo,com
 
-Zane Werle - [@your_twitter](https://twitter.com/your_username) - zanewerle@gmail.com
+Zane Werle - [@your_twitter](https://twitter.com/zanewerle) - zanewerle@gmail.com
 
 Jayden Scheffenhauer - [@your_twitter](https://twitter.com/your_username) - jdrich135@gmail.com
 
