@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [horrorGames, setHorrorGames] = useState([]);
@@ -118,7 +117,7 @@ const Home = () => {
                     <h1 className="genre-title">HORROR</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${horrorGames[randomHorrorIndex()]?.id}`}><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="temp" className='homeGames' /></Link></div>
+                        <div className="small-box"><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <div className="small-box"><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <div className="small-box"><img src={horrorGames[randomHorrorIndex()]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
