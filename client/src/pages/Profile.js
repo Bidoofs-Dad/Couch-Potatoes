@@ -60,15 +60,14 @@ const Profile = () => {
           </div>
         </div>
       </div>
-<div className="temp">
+      <div className="temp">
           <ReviewList
             reviews={user.reviews}
             title={`${user.username}'s thoughts...`}
             showTitle={false}
             showUsername={false}
           />
-        </div>
-
+      </div>
     </div>
   </div>
   );

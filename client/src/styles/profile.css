@@ -60,6 +60,7 @@ body, html {
     padding-right: 100px;
     padding-left: 100px;
     padding-bottom: 40px;
+    margin-top: 30px;
     box-shadow: 8px 8px 2px var(--light-pink);
 }
 
