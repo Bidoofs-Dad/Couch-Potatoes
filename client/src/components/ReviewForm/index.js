@@ -98,7 +98,7 @@ const ReviewForm = ({ gameId, gameName }) => {
               </button>
             </div>
             {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
+              <div className="error">
                 {error.message}
               </div>
             )}
