@@ -25,24 +25,22 @@ function SearchResults() {
   }, [searchInput]);
 
   return (
-
     <div className='page-container'>
-      <div className='content-container'>
-        <div className='games'>
-          <div className='game-row'>
-            {games.map((game, index) => (
-              <div key={game.id} className='game-item'>
-                <div className='game-card'>
-                  <img src={game.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='game-image' />
-                  <Link to={`/game/${game.id}`} className='game-name'>{game.name}</Link>
-                </div>
+    <div className='content-container'>
+      <div className='games'>
+        <div className='game-row'>
+          {games.map((game, index) => (
+            <Link key={game.id} to={`/game/${game.id}`} className='game-item'>
+              <div className='game-card'>
+                <img src={game.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='game-image' />
               </div>
-            ))}
-
-          </div>
+              <div className='game-name'>{game.name}</div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
