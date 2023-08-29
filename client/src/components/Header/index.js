@@ -22,6 +22,14 @@ const Header = () => {
         Auth.logout();
     };
 
+    function handleSearch() {
+        const searchUrl = `/search-results?search=${searchInput}`;
+        localStorage.setItem('searchInput', searchInput);
+
+        window.location.href = searchUrl;
+    }
+
+
     return (
 
         <header>
@@ -32,16 +40,22 @@ const Header = () => {
                     <h1 className='pageName'>COUCH POTATOES</h1>
                 </Link>
 
-
                 <form>
-                    <input className="search-bar" type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
-                    <Link to={`/search-results?search=${searchInput}`} className="custom-button" onClick={() => {
-
-                        localStorage.setItem('searchInput', searchInput);}}>
-
-                        <FontAwesomeIcon icon={faSearch} className='searchIcon' />
-                    </Link>
+                    <input
+                        className="search-bar"
+                        type="text"
+                        value={searchInput}
+                        onChange={(e) => setSearchInput(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                e.preventDefault();
+                                handleSearch();
+                            }
+                        }}
+                    />
+                    <FontAwesomeIcon icon={faSearch} className='searchIcon' onClick={() => handleSearch()} />
                 </form>
+
 
                 <div className="links">
                     <Link to='/me' className='user-fav'>
@@ -61,13 +75,13 @@ const Header = () => {
 
                     {Auth.loggedIn() ? (
                         <div className="icon-container">
-                            <FontAwesomeIcon icon={faRightToBracket} id="logoutButton" className="logOn-button" onClick={logout}/>
+                            <FontAwesomeIcon icon={faRightToBracket} id="logoutButton" className="logOn-button" onClick={logout} />
                             <span className="icon-caption">LOGOUT</span>
                         </div>
                     ) : (
                         <Link to='login' className='noDecor'>
                             <div className='icon-container'>
-                                <FontAwesomeIcon icon={faArrowRight} id="loginButton" className="logOn-button"/>
+                                <FontAwesomeIcon icon={faArrowRight} id="loginButton" className="logOn-button" />
                                 <span className="icon-caption">LOG IN</span>
                             </div>
                         </Link>
