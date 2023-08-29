@@ -14,17 +14,21 @@ const Home = () => {
     const [bethesdaGames, setBethesdaGames] = useState([]);
     const [multiplayerGames, setMultiplayerGames] = useState([]);
 
-    const randomArrayForty = () => {
-        return Math.floor(Math.random() * 40);
-    }
-    const randomArrayThirtyEight = () => {
-        return Math.floor(Math.random() * 38);
-    }
+    const generateRandomNumbers = (count, max) => {
+        const uniqueNumbers = new Set();
+    
+        while (uniqueNumbers.size < count) {
+            const randomNumber = Math.floor(Math.random() * max);
+            uniqueNumbers.add(randomNumber);
+        }
+    
+        return Array.from(uniqueNumbers);
+    };
 
-    const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
-    const [indieRandomIndex, setIndieRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
-    const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(Array.from({ length: 3 }, randomArrayThirtyEight));
-    const [multiplayerRandomIndex, setMultiplayerRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+    const [horrorRandomIndex, setHorrorRandomIndex] = useState(generateRandomNumbers(3, 40));
+    const [indieRandomIndex, setIndieRandomIndex] = useState(generateRandomNumbers(3, 40));
+    const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(generateRandomNumbers(3, 38));
+    const [multiplayerRandomIndex, setMultiplayerRandomIndex] = useState(generateRandomNumbers(3, 40));
 
 
     useEffect(() => {
