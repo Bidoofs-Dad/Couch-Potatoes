@@ -17,9 +17,13 @@ const Home = () => {
     const randomArrayForty = () => {
         return Math.floor(Math.random() * 40);
     }
+    const randomArrayThirtyEight = () => {
+        return Math.floor(Math.random() * 38);
+    }
 
     const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
     const [indieRandomIndex, setIndieRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+    const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(Array.from({ length: 3 }, randomArrayThirtyEight));
 
 
     useEffect(() => {
@@ -139,9 +143,9 @@ const Home = () => {
                     <h1 className="genre-title">BETHESDA</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${bethesdaGames[0]?.id}`}><img src={bethesdaGames[0]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${bethesdaGames[3]?.id}`}><img src={bethesdaGames[3]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${bethesdaGames[5]?.id}`}><img src={bethesdaGames[5]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${bethesdaGames[bethesdaRandomIndex[0]]?.id}`}><img src={bethesdaGames[bethesdaRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${bethesdaGames[bethesdaRandomIndex[1]]?.id}`}><img src={bethesdaGames[bethesdaRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${bethesdaGames[bethesdaRandomIndex[2]]?.id}`}><img src={bethesdaGames[bethesdaRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
