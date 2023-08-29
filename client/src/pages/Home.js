@@ -14,14 +14,27 @@ const Home = () => {
     const [bethesdaGames, setBethesdaGames] = useState([]);
     const [multiplayerGames, setMultiplayerGames] = useState([]);
 
+    const randomArrayForty = () => {
+        return Math.floor(Math.random() * 40);
+    }
+    const randomArrayThirtyEight = () => {
+        return Math.floor(Math.random() * 38);
+    }
+
+    const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+    const [indieRandomIndex, setIndieRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+    const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(Array.from({ length: 3 }, randomArrayThirtyEight));
+    const [multiplayerRandomIndex, setMultiplayerRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+
+
     useEffect(() => {
         async function fetchHorrorGames() {
             try {
-                    const response = await fetchHorror();
-                    const horrorData = await response.json();
-                    console.log(horrorData.results);
-                    setHorrorGames(horrorData.results);
-                
+                const response = await fetchHorror();
+                const horrorData = await response.json();
+                console.log(horrorData.results);
+                setHorrorGames(horrorData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -33,11 +46,11 @@ const Home = () => {
     useEffect(() => {
         async function fetchIndieGames() {
             try {
-                    const response = await fetchIndie();
-                    const indieData = await response.json();
-                    console.log(indieData.results);
-                    setIndieGames(indieData.results);
-                
+                const response = await fetchIndie();
+                const indieData = await response.json();
+                console.log(indieData.results);
+                setIndieGames(indieData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -49,11 +62,11 @@ const Home = () => {
     useEffect(() => {
         async function fetchBethesdaGames() {
             try {
-                    const response = await fetchBethesda();
-                    const bethesdaData = await response.json();
-                    console.log(bethesdaData.results);
-                    setBethesdaGames(bethesdaData.results);
-                
+                const response = await fetchBethesda();
+                const bethesdaData = await response.json();
+                console.log(bethesdaData.results);
+                setBethesdaGames(bethesdaData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -65,11 +78,11 @@ const Home = () => {
     useEffect(() => {
         async function fetchMultiplayerGames() {
             try {
-                    const response = await fetchMultiplayer();
-                    const multiplayerData = await response.json();
-                    console.log(multiplayerData.results);
-                    setMultiplayerGames(multiplayerData.results);
-                
+                const response = await fetchMultiplayer();
+                const multiplayerData = await response.json();
+                console.log(multiplayerData.results);
+                setMultiplayerGames(multiplayerData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -78,32 +91,12 @@ const Home = () => {
         fetchMultiplayerGames();
     }, []);
 
-    // const randomHorrorIndex = () => {
-    //     return Math.floor(Math.random() * horrorGames.length);
-    // };
-
-    // const randomIndieIndex = () => {
-    //     return Math.floor(Math.random() * indieGames.length);
-    // };
-
-    // const randomBethesdaIndex = () => {
-    //     return Math.floor(Math.random() * bethesdaGames.length);
-    // };
-
-    // const randomMultiplayerIndex = () => {
-    //     return Math.floor(Math.random() * multiplayerGames.length);
-    // };
-
-    // const randomIndex = (max) => {
-    //     return Math.floor(Math.random() * max);
-    // };
-
     return (
         <main className="page-container">
             <div className="content-container">
                 <div className='c-rotate'>
                     <div className='image-container'>
-                        <img src={bgate} alt='' className='cImage' />
+                        <img src={bgate} alt="Baldur's Gate 3 cover" className='cImage' />
                         <div className='game-title'>
                             Baldur's Gate III
                         </div>
@@ -122,20 +115,27 @@ const Home = () => {
                     <h1 className="genre-title">HORROR</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${horrorGames[15]?.id}`}><img src={horrorGames[15]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[0]]?.id}`} className='noDecor'><img src={horrorGames[horrorRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{horrorGames[horrorRandomIndex[0]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[1]]?.id}`} className='noDecor'><img src={horrorGames[horrorRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{horrorGames[horrorRandomIndex[1]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[2]]?.id}`} className='noDecor'><img src={horrorGames[horrorRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{horrorGames[horrorRandomIndex[2]]?.name}</div></Link></div>
+                        <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
+                    </div>
+                    {/* <div className="bar-content">
+                        <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
+                        <div className="small-box"><Link to={`/game/${horrorGames[13]?.id}`}><img src={horrorGames[13]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <div className="small-box"><Link to={`/game/${horrorGames[29]?.id}`}><img src={horrorGames[29]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <div className="small-box"><Link to={`/game/${horrorGames[26]?.id}`}><img src={horrorGames[26]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="horizontal-bar">
                     <h1 className="genre-title">INDIE</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${indieGames[3]?.id}`}><img src={indieGames[3]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${indieGames[10]?.id}`}><img src={indieGames[10]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${indieGames[26]?.id}`}><img src={indieGames[26]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${indieGames[indieRandomIndex[0]]?.id}`} className='noDecor'><img src={indieGames[indieRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{indieGames[indieRandomIndex[0]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${indieGames[indieRandomIndex[1]]?.id}`} className='noDecor'><img src={indieGames[indieRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{indieGames[indieRandomIndex[1]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${indieGames[indieRandomIndex[2]]?.id}`} className='noDecor'><img src={indieGames[indieRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{indieGames[indieRandomIndex[2]]?.name}</div></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
@@ -144,9 +144,9 @@ const Home = () => {
                     <h1 className="genre-title">BETHESDA</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${bethesdaGames[0]?.id}`}><img src={bethesdaGames[0]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${bethesdaGames[3]?.id}`}><img src={bethesdaGames[3]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${bethesdaGames[5]?.id}`}><img src={bethesdaGames[5]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${bethesdaGames[bethesdaRandomIndex[0]]?.id}`} className='noDecor'><img src={bethesdaGames[bethesdaRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{bethesdaGames[bethesdaRandomIndex[0]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${bethesdaGames[bethesdaRandomIndex[1]]?.id}`} className='noDecor'><img src={bethesdaGames[bethesdaRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{bethesdaGames[bethesdaRandomIndex[1]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${bethesdaGames[bethesdaRandomIndex[2]]?.id}`} className='noDecor'><img src={bethesdaGames[bethesdaRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{bethesdaGames[bethesdaRandomIndex[2]]?.name}</div></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
@@ -155,9 +155,9 @@ const Home = () => {
                     <h1 className="genre-title">MULTIPLAYER</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${multiplayerGames[8]?.id}`}><img src={multiplayerGames[8]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${multiplayerGames[31]?.id}`}><img src={multiplayerGames[31]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${multiplayerGames[32]?.id}`}><img src={multiplayerGames[32]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${multiplayerGames[multiplayerRandomIndex[0]]?.id}`} className='noDecor'><img src={multiplayerGames[multiplayerRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{multiplayerGames[multiplayerRandomIndex[0]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${multiplayerGames[multiplayerRandomIndex[1]]?.id}`} className='noDecor'><img src={multiplayerGames[multiplayerRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{multiplayerGames[multiplayerRandomIndex[1]]?.name}</div></Link></div>
+                        <div className="small-box"><Link to={`/game/${multiplayerGames[multiplayerRandomIndex[2]]?.id}`} className='noDecor'><img src={multiplayerGames[multiplayerRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{multiplayerGames[multiplayerRandomIndex[2]]?.name}</div></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
