@@ -28,7 +28,7 @@ const Header = () => {
         const searchUrl = `/search-results?search=${searchInput}`;
         localStorage.setItem('searchInput', searchInput);
 
-        if (location.pathname === `/search-results?search=${searchInput}`) {
+        if (location.pathname === '/search-results') {
             // If already on the search-results page, simply navigate
             navigate(searchUrl);
         } else {
