@@ -16,12 +16,12 @@ const Home = () => {
 
     const generateRandomNumbers = (count, max) => {
         const uniqueNumbers = new Set();
-    
+
         while (uniqueNumbers.size < count) {
             const randomNumber = Math.floor(Math.random() * max);
             uniqueNumbers.add(randomNumber);
         }
-    
+
         return Array.from(uniqueNumbers);
     };
 
@@ -124,13 +124,6 @@ const Home = () => {
                         <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[2]]?.id}`} className='noDecor'><img src={horrorGames[horrorRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{horrorGames[horrorRandomIndex[2]]?.name}</div></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
-                    {/* <div className="bar-content">
-                        <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${horrorGames[13]?.id}`}><img src={horrorGames[13]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${horrorGames[29]?.id}`}><img src={horrorGames[29]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${horrorGames[26]?.id}`}><img src={horrorGames[26]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
-                    </div> */}
                 </div>
 
                 <div className="horizontal-bar">
