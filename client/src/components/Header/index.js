@@ -24,9 +24,10 @@ const Header = () => {
     };
 
     function handleSearch() {
-        const searchUrl = `/search-results?search=${searchInput}`;
         localStorage.setItem('searchInput', searchInput);
+        const searchUrl = `/search-results?search=${searchInput}`;
 
+        window.location.href = searchUrl
         navigate(searchUrl);
     }
 
