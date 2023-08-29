@@ -14,14 +14,21 @@ const Home = () => {
     const [bethesdaGames, setBethesdaGames] = useState([]);
     const [multiplayerGames, setMultiplayerGames] = useState([]);
 
+    const horrorId = () => {
+        return Math.floor(Math.random() * 40);
+    }
+
+    const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, horrorId));
+
+
     useEffect(() => {
         async function fetchHorrorGames() {
             try {
-                    const response = await fetchHorror();
-                    const horrorData = await response.json();
-                    console.log(horrorData.results);
-                    setHorrorGames(horrorData.results);
-                
+                const response = await fetchHorror();
+                const horrorData = await response.json();
+                console.log(horrorData.results);
+                setHorrorGames(horrorData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -33,11 +40,11 @@ const Home = () => {
     useEffect(() => {
         async function fetchIndieGames() {
             try {
-                    const response = await fetchIndie();
-                    const indieData = await response.json();
-                    console.log(indieData.results);
-                    setIndieGames(indieData.results);
-                
+                const response = await fetchIndie();
+                const indieData = await response.json();
+                console.log(indieData.results);
+                setIndieGames(indieData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -49,11 +56,11 @@ const Home = () => {
     useEffect(() => {
         async function fetchBethesdaGames() {
             try {
-                    const response = await fetchBethesda();
-                    const bethesdaData = await response.json();
-                    console.log(bethesdaData.results);
-                    setBethesdaGames(bethesdaData.results);
-                
+                const response = await fetchBethesda();
+                const bethesdaData = await response.json();
+                console.log(bethesdaData.results);
+                setBethesdaGames(bethesdaData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -65,11 +72,11 @@ const Home = () => {
     useEffect(() => {
         async function fetchMultiplayerGames() {
             try {
-                    const response = await fetchMultiplayer();
-                    const multiplayerData = await response.json();
-                    console.log(multiplayerData.results);
-                    setMultiplayerGames(multiplayerData.results);
-                
+                const response = await fetchMultiplayer();
+                const multiplayerData = await response.json();
+                console.log(multiplayerData.results);
+                setMultiplayerGames(multiplayerData.results);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -77,26 +84,6 @@ const Home = () => {
 
         fetchMultiplayerGames();
     }, []);
-
-    // const randomHorrorIndex = () => {
-    //     return Math.floor(Math.random() * horrorGames.length);
-    // };
-
-    // const randomIndieIndex = () => {
-    //     return Math.floor(Math.random() * indieGames.length);
-    // };
-
-    // const randomBethesdaIndex = () => {
-    //     return Math.floor(Math.random() * bethesdaGames.length);
-    // };
-
-    // const randomMultiplayerIndex = () => {
-    //     return Math.floor(Math.random() * multiplayerGames.length);
-    // };
-
-    // const randomIndex = (max) => {
-    //     return Math.floor(Math.random() * max);
-    // };
 
     return (
         <main className="page-container">
@@ -122,11 +109,18 @@ const Home = () => {
                     <h1 className="genre-title">HORROR</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${horrorGames[15]?.id}`}><img src={horrorGames[15]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[0]]?.id}`}><img src={horrorGames[horrorRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[1]]?.id}`}><img src={horrorGames[horrorRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[2]]?.id}`}><img src={horrorGames[horrorRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
+                    </div>
+                    {/* <div className="bar-content">
+                        <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
+                        <div className="small-box"><Link to={`/game/${horrorGames[13]?.id}`}><img src={horrorGames[13]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <div className="small-box"><Link to={`/game/${horrorGames[29]?.id}`}><img src={horrorGames[29]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <div className="small-box"><Link to={`/game/${horrorGames[26]?.id}`}><img src={horrorGames[26]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="horizontal-bar">
