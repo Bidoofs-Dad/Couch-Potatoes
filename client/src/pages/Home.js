@@ -14,11 +14,12 @@ const Home = () => {
     const [bethesdaGames, setBethesdaGames] = useState([]);
     const [multiplayerGames, setMultiplayerGames] = useState([]);
 
-    const horrorId = () => {
+    const randomArrayForty = () => {
         return Math.floor(Math.random() * 40);
     }
 
-    const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, horrorId));
+    const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+    const [indieRandomIndex, setIndieRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
 
 
     useEffect(() => {
@@ -127,9 +128,9 @@ const Home = () => {
                     <h1 className="genre-title">INDIE</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${indieGames[3]?.id}`}><img src={indieGames[3]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${indieGames[10]?.id}`}><img src={indieGames[10]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${indieGames[26]?.id}`}><img src={indieGames[26]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${indieGames[indieRandomIndex[0]]?.id}`}><img src={indieGames[indieRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${indieGames[indieRandomIndex[1]]?.id}`}><img src={indieGames[indieRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${indieGames[indieRandomIndex[2]]?.id}`}><img src={indieGames[indieRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
