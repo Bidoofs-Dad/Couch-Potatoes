@@ -24,6 +24,7 @@ const Home = () => {
     const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
     const [indieRandomIndex, setIndieRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
     const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(Array.from({ length: 3 }, randomArrayThirtyEight));
+    const [multiplayerRandomIndex, setMultiplayerRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
 
 
     useEffect(() => {
@@ -154,9 +155,9 @@ const Home = () => {
                     <h1 className="genre-title">MULTIPLAYER</h1>
                     <div className="bar-content">
                         <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${multiplayerGames[8]?.id}`}><img src={multiplayerGames[8]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${multiplayerGames[31]?.id}`}><img src={multiplayerGames[31]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${multiplayerGames[32]?.id}`}><img src={multiplayerGames[32]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${multiplayerGames[multiplayerRandomIndex[0]]?.id}`}><img src={multiplayerGames[multiplayerRandomIndex[0]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${multiplayerGames[multiplayerRandomIndex[1]]?.id}`}><img src={multiplayerGames[multiplayerRandomIndex[1]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
+                        <div className="small-box"><Link to={`/game/${multiplayerGames[multiplayerRandomIndex[2]]?.id}`}><img src={multiplayerGames[multiplayerRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
                 </div>
