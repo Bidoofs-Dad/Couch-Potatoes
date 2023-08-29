@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import '../components.css'
 import cLogo from '../assets/potatoIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +15,7 @@ import '../components.css'
 import Auth from '../../utils/auth';
 
 const Header = () => {
+    const navigate = useNavigate();
     const [searchInput, setSearchInput] = useState('');
 
     const logout = (event) => {
@@ -26,7 +27,7 @@ const Header = () => {
         const searchUrl = `/search-results?search=${searchInput}`;
         localStorage.setItem('searchInput', searchInput);
 
-        window.location.href = searchUrl;
+        navigate(searchUrl);
     }
 
 
