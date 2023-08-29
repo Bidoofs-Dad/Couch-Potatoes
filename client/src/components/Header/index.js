@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../components.css'
 import cLogo from '../assets/potatoIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +16,6 @@ import Auth from '../../utils/auth';
 
 const Header = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const [searchInput, setSearchInput] = useState('');
 
     const logout = (event) => {
@@ -28,13 +27,7 @@ const Header = () => {
         const searchUrl = `/search-results?search=${searchInput}`;
         localStorage.setItem('searchInput', searchInput);
 
-        if (location.pathname === '/search-results') {
-            // If already on the search-results page, simply navigate
-            navigate(searchUrl);
-        } else {
-            // Navigate normally
-            window.location.href = searchUrl;
-        }
+        navigate(searchUrl);
     }
 
 
