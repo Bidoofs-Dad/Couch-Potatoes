@@ -14,17 +14,21 @@ const Home = () => {
     const [bethesdaGames, setBethesdaGames] = useState([]);
     const [multiplayerGames, setMultiplayerGames] = useState([]);
 
-    const randomArrayForty = () => {
-        return Math.floor(Math.random() * 40);
-    }
-    const randomArrayThirtyEight = () => {
-        return Math.floor(Math.random() * 38);
-    }
+    const generateRandomNumbers = (count, max) => {
+        const uniqueNumbers = new Set();
 
-    const [horrorRandomIndex, setHorrorRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
-    const [indieRandomIndex, setIndieRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
-    const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(Array.from({ length: 3 }, randomArrayThirtyEight));
-    const [multiplayerRandomIndex, setMultiplayerRandomIndex] = useState(Array.from({ length: 3 }, randomArrayForty));
+        while (uniqueNumbers.size < count) {
+            const randomNumber = Math.floor(Math.random() * max);
+            uniqueNumbers.add(randomNumber);
+        }
+
+        return Array.from(uniqueNumbers);
+    };
+
+    const [horrorRandomIndex, setHorrorRandomIndex] = useState(generateRandomNumbers(3, 40));
+    const [indieRandomIndex, setIndieRandomIndex] = useState(generateRandomNumbers(3, 40));
+    const [bethesdaRandomIndex, setBethwsdaRandomIndex] = useState(generateRandomNumbers(3, 38));
+    const [multiplayerRandomIndex, setMultiplayerRandomIndex] = useState(generateRandomNumbers(3, 40));
 
 
     useEffect(() => {
@@ -120,13 +124,6 @@ const Home = () => {
                         <div className="small-box"><Link to={`/game/${horrorGames[horrorRandomIndex[2]]?.id}`} className='noDecor'><img src={horrorGames[horrorRandomIndex[2]]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /><div className='small-game-title'>{horrorGames[horrorRandomIndex[2]]?.name}</div></Link></div>
                         <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
                     </div>
-                    {/* <div className="bar-content">
-                        <FontAwesomeIcon icon={faArrowLeft} className="cIcon icon-arrow sb-Arrow" />
-                        <div className="small-box"><Link to={`/game/${horrorGames[13]?.id}`}><img src={horrorGames[13]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${horrorGames[29]?.id}`}><img src={horrorGames[29]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <div className="small-box"><Link to={`/game/${horrorGames[26]?.id}`}><img src={horrorGames[26]?.background_image} alt="This API doesn't offer alt text </3 But this is a screen cap of whatever game you are looking at!" className='homeGames' /></Link></div>
-                        <FontAwesomeIcon icon={faArrowRight} className="cIcon icon-arrow sb-Arrow" />
-                    </div> */}
                 </div>
 
                 <div className="horizontal-bar">

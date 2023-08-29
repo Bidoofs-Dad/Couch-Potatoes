@@ -8,42 +8,6 @@ const ReviewList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-
-// const mappedReviews = () => {
-//   reviews.map((review) => {
-//   console.log(review);
-//   return (
-//     <div key={review._id} className="temp">
-            
-//             <h4 className="temp">
-//               {showUsername ? (
-//                 <Link
-//                   className="temp"
-//                   to={`/profiles/${review.reviewUser}`}
-//                 >
-//                   {review.reviewUser} <br />
-//                   <span style={{ fontSize: '1rem' }}>
-//                     left this review on {review.dateCreated}
-//                   </span>
-//                 </Link>
-//               ) : (
-//                 <>
-//                   <span style={{ fontSize: '1rem' }}>
-//                     You left this review on {review.dateCreated}
-//                   </span>
-//                 </>
-//               )}
-//             </h4>
-//             <div className="temp">
-//               <p>{review.reviewText}</p>
-//             </div>
-
-//           </div>
-//   )
-// })
-// }
-
-
   if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
@@ -75,7 +39,7 @@ const ReviewList = ({
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You left this review on {review.dateCreated}
+                  {review.reviewUser} left this review on {review.dateCreated}
                   </span>
                   
                 </>
